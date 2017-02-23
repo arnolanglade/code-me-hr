@@ -1,0 +1,14 @@
+{% use 'form_div_layout.html.twig' %}
+
+{%- block form_start -%}
+    {% set attr = attr | merge({'class' :  attr.class|default ~ ' ui form'}) %}
+    {{ parent() }}
+{%- endblock form_start -%}
+
+{%- block form_row -%}
+    <div class="field">
+        {{- form_label(form) -}}
+        {{- form_errors(form) -}}
+        {{- form_widget(form) -}}
+    </div>
+{%- endblock form_row -%}

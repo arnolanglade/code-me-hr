@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'form.html.twig' %}
+
+{% block content %}
+    <h1 class="ui dividing header">Employee</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <a href="{{ path('employee_list') }}" class="ui button">
+            Back to the list
+        </a>
+        <input type="submit"
+               value="Validate"
+               class="ui primary button" />
+    {{ form_end(form) }}
+{% endblock %}

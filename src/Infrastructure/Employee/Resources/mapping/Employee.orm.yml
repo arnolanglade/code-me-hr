@@ -1,0 +1,19 @@
+Component\Employee\Employee:
+    type: entity
+    table: employee
+    fields:
+        id:
+            id: true
+            type: string
+            generator:
+                strategy: NONE
+        name:
+            type: string
+            nullable: false
+        position:
+            type: string
+            nullable: false
+        salaryScale:
+            column: salary_scale
+            type: integer
+            nullable: false
