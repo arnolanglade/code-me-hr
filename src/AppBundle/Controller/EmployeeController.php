@@ -18,7 +18,12 @@ class EmployeeController extends Controller
      */
     public function listAction(Request $request)
     {
-        $searchCriteria = new SearchCriteria($request->get('name'), $request->get('position'));
+        $searchCriteria = new SearchCriteria(
+            $request->get('name'),
+            $request->get('position'),
+            (bool) $request->get('is_fired')
+        );
+
         $employees = $this->get('employee.repository')->search($searchCriteria);
 
         return $this->render('employee/list.html.twig', [

@@ -17,3 +17,7 @@ Component\Employee\Employee:
             column: salary_scale
             type: integer
             nullable: false
+        firedAt:
+            column: fired_at
+            type: date
+            nullable: true

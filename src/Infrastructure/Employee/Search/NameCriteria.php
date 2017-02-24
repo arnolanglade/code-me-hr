@@ -7,7 +7,7 @@ use Happyr\DoctrineSpecification\BaseSpecification;
 use Happyr\DoctrineSpecification\Spec;
 use Happyr\DoctrineSpecification\Specification\Specification;
 
-class SearchableByName extends BaseSpecification
+final class NameCriteria extends BaseSpecification
 {
     /** @var string */
     private $name;
@@ -16,7 +16,7 @@ class SearchableByName extends BaseSpecification
      * @param string      $position
      * @param string|null $dqlAlias
      */
-    public function __construct(string $position, string $dqlAlias = null)
+    public function __construct(string $position = null, string $dqlAlias = null)
     {
         parent::__construct($dqlAlias);
 
@@ -24,10 +24,14 @@ class SearchableByName extends BaseSpecification
     }
 
     /**
-     * @return Specification
+     * @return Specification|null
      */
     protected function getSpec()
     {
+        if (null === $this->name) {
+            return null;
+        }
+
         return Spec::like('name', $this->name);
     }
 }

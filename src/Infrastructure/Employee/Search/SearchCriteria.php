@@ -7,7 +7,7 @@ use Happyr\DoctrineSpecification\BaseSpecification;
 use Happyr\DoctrineSpecification\Spec;
 use Happyr\DoctrineSpecification\Specification\Specification;
 
-class SearchCriteria extends BaseSpecification
+final class SearchCriteria extends BaseSpecification
 {
     /** @var string */
     private $name;
@@ -15,17 +15,26 @@ class SearchCriteria extends BaseSpecification
     /** @var string */
     private $position;
 
+    /** @var bool */
+    private $isFired;
+
     /**
-     * @param string      $name
-     * @param string      $position
+     * @param string|null $name
+     * @param string|null $position
+     * @param bool|null   $isFired
      * @param string|null $dqlAlias
      */
-    public function __construct(string $name = null, string $position = null, string $dqlAlias = null)
-    {
+    public function __construct(
+        string $name = null,
+        string $position = null,
+        bool $isFired = null,
+        string $dqlAlias = null
+    ) {
         parent::__construct($dqlAlias);
 
         $this->name = $name;
         $this->position = $position;
+        $this->isFired = $isFired;
     }
 
     /**
@@ -33,19 +42,11 @@ class SearchCriteria extends BaseSpecification
      */
     protected function getSpec()
     {
-        if (null !== $this->name && null !== $this->position) {
-            return Spec::andX(
-                new SearchableByName($this->name),
-                new SearchableByPosition($this->position)
-            );
-        }
+        return Spec::andX(
+            new NameCriteria($this->name),
+            new PositionCriteria($this->position),
+            new isFiredCriteria($this->isFired)
+        );
 
-        if (null !== $this->position) {
-            return new SearchableByPosition($this->position);
-        }
-
-        if (null !== $this->name) {
-            return new SearchableByName($this->name);
-        }
     }
 }
