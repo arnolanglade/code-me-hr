@@ -1,9 +1,8 @@
 <?php
 
-namespace Component\Employee;
+namespace Al\Component\Employee;
 
 use Happyr\DoctrineSpecification\Specification\Specification;
-use Ramsey\Uuid\Uuid;
 
 interface EmployeeRepositoryInterface
 {

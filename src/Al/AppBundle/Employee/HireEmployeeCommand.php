@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace AppBundle\Employee;
+namespace Al\AppBundle\Employee;
 
 final class HireEmployeeCommand
 {

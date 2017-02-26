@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle;
+namespace Al\AppBundle;
 
 use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -14,7 +14,7 @@ class AppBundle extends Bundle
     public function build(ContainerBuilder $container)
     {
         $container->addCompilerPass(DoctrineOrmMappingsPass::createYamlMappingDriver(
-            [__DIR__.'/../Infrastructure/Employee/Resources/mapping' => 'Component\Employee'],
+            [__DIR__.'/../../Al/Infrastructure/Employee/Resources/mapping' => 'Al\Component\Employee'],
             ['doctrine.orm.entity_manager']
         ));
     }

@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace Infrastructure\Employee\Criteria;
+namespace Al\Infrastructure\Employee\Criteria;
 
 use Happyr\DoctrineSpecification\BaseSpecification;
 use Happyr\DoctrineSpecification\Spec;
 use Happyr\DoctrineSpecification\Specification\Specification;
 
-final class PositionCriteria extends BaseSpecification
+final class NameCriteria extends BaseSpecification
 {
     /** @var string */
-    private $position;
+    private $name;
 
     /**
      * @param string      $position
@@ -20,7 +20,7 @@ final class PositionCriteria extends BaseSpecification
     {
         parent::__construct($dqlAlias);
 
-        $this->position = $position;
+        $this->name = $position;
     }
 
     /**
@@ -28,10 +28,10 @@ final class PositionCriteria extends BaseSpecification
      */
     protected function getSpec()
     {
-        if (null === $this->position) {
+        if (null === $this->name) {
             return null;
         }
 
-        return Spec::like('position', $this->position);
+        return Spec::like('name', $this->name);
     }
 }

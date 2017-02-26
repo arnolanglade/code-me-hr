@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Infrastructure\Employee\Repository;
+namespace Al\Infrastructure\Employee\Repository;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
-use Component\Employee\EmployeeInterface;
-use Component\Employee\EmployeeRepositoryInterface;
+use Al\Component\Employee\EmployeeInterface;
+use Al\Component\Employee\EmployeeRepositoryInterface;
 use Happyr\DoctrineSpecification\Filter\Filter;
 use Happyr\DoctrineSpecification\Query\QueryModifier;
 use Happyr\DoctrineSpecification\Specification\Specification;

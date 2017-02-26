@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Component\Employee;
+namespace Al\Component\Employee;
 
 interface EmployeeInterface
 {

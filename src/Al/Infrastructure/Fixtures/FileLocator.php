@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Infrastructure\Fixtures;
+namespace Al\Infrastructure\Fixtures;
 
 use Hautelook\AliceBundle\FixtureLocatorInterface;
 use Symfony\Component\Finder\Finder as SymfonyFinder;

@@ -1,12 +1,12 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace Al\AppBundle\Controller;
 
-use AppBundle\Employee\PromoteEmployeeCommand;
-use AppBundle\Form\EmployeeType;
-use Component\Employee\Employee;
-use AppBundle\Employee\HireEmployeeCommand;
-use Infrastructure\Employee\Criteria\SearchCriteria;
+use Al\AppBundle\Employee\PromoteEmployeeCommand;
+use Al\AppBundle\Form\EmployeeType;
+use Al\Component\Employee\Employee;
+use Al\AppBundle\Employee\HireEmployeeCommand;
+use Al\Infrastructure\Employee\Criteria\SearchCriteria;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
