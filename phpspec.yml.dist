@@ -1,0 +1,4 @@
+suites:
+    app:
+        namespace: Al
+        psr4_prefix: Al

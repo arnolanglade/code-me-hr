@@ -39,7 +39,7 @@ final class EmployeeRepository extends EntityRepository implements EmployeeRepos
     /**
      * {@inheritdoc}
      */
-    public function save(EmployeeInterface $employee)
+    public function add(EmployeeInterface $employee)
     {
         $this->_em->persist($employee);
         $this->_em->flush();
@@ -61,7 +61,7 @@ final class EmployeeRepository extends EntityRepository implements EmployeeRepos
     public function applySpecification(QueryBuilder $queryBuilder, Specification $specification)
     {
         if ($specification instanceof QueryModifier) {
-            $specification->modify($queryBuilder, $queryBuilder->getRootAliases());
+            $specification->modify($queryBuilder, $queryBuilder->getRootAliases()[0]);
         }
 
         if ($specification instanceof Filter

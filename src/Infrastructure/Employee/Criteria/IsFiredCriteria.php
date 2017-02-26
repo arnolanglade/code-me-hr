@@ -7,7 +7,7 @@ use Happyr\DoctrineSpecification\BaseSpecification;
 use Happyr\DoctrineSpecification\Spec;
 use Happyr\DoctrineSpecification\Specification\Specification;
 
-final class isFiredCriteria extends BaseSpecification
+final class IsFiredCriteria extends BaseSpecification
 {
     /** @var bool */
     private $isFired = false;

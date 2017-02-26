@@ -49,7 +49,7 @@ class EmployeeController extends Controller
                 $employeeCommand->getSalaryScale()
             );
 
-            $this->get('employee.repository')->save($employee);
+            $this->get('employee.repository')->add($employee);
 
             return $this->redirectToRoute('employee_list');
         }
@@ -75,7 +75,7 @@ class EmployeeController extends Controller
                 $employeeCommand->getNewSalaryScale()
             );
 
-            $this->get('employee.repository')->save($employee);
+            $this->get('employee.repository')->add($employee);
 
             return $this->redirectToRoute('employee_list');
         }
@@ -92,6 +92,6 @@ class EmployeeController extends Controller
     {
         $employee->fire();
 
-        $this->get('employee.repository')->save($employee);
+        $this->get('employee.repository')->add($employee);
     }
 }

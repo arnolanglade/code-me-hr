@@ -25,7 +25,7 @@ interface EmployeeRepositoryInterface
      *
      * @param EmployeeInterface $employee
      */
-    public function save(EmployeeInterface $employee);
+    public function add(EmployeeInterface $employee);
 
     /**
      * Remove an employee

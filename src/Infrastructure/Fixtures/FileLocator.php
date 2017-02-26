@@ -14,6 +14,7 @@ final class FileLocator implements FixtureLocatorInterface
     public function locateFiles(array $bundles, string $environment): array
     {
         $path = sprintf('%s/../Employee/Resources/fixtures', __DIR__);
+        $path = realpath($path);
         if (false === $path || false === file_exists($path)) {
             return [];
         }

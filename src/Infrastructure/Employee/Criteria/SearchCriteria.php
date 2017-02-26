@@ -45,7 +45,7 @@ final class SearchCriteria extends BaseSpecification
         return Spec::andX(
             new NameCriteria($this->name),
             new PositionCriteria($this->position),
-            new isFiredCriteria($this->isFired)
+            new IsFiredCriteria($this->isFired)
         );
     }
 }

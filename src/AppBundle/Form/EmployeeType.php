@@ -20,14 +20,5 @@ class EmployeeType extends AbstractType
             ->add('position')
             ->add('salaryScale')
         ;
-
-        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
-            $employee = $event->getData();
-
-            if ($employee instanceof PromoteEmployee) {
-                $form = $event->getForm();
-                $form->remove('name');
-            }
-        });
     }
 }
