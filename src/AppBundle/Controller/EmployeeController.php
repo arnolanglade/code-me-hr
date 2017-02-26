@@ -2,10 +2,10 @@
 
 namespace Al\AppBundle\Controller;
 
-use Al\AppBundle\Employee\PromoteEmployeeCommand;
+use Al\Component\Employee\Command\PromoteEmployee;
 use Al\AppBundle\Form\EmployeeType;
 use Al\Component\Employee\Employee;
-use Al\AppBundle\Employee\HireEmployeeCommand;
+use Al\Component\Employee\Command\HireEmployee;
 use Al\Infrastructure\Employee\Criteria\SearchCriteria;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,11 +37,11 @@ class EmployeeController extends Controller
      */
     public function hireAction(Request $request)
     {
-        $form = $this->createForm(EmployeeType::class, new HireEmployeeCommand());
+        $form = $this->createForm(EmployeeType::class, new HireEmployee());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var HireEmployeeCommand $employeeCommand */
+            /** @var HireEmployee $employeeCommand */
             $employeeCommand = $form->getData();
             $employee = Employee::hire(
                 $employeeCommand->getName(),
@@ -64,11 +64,11 @@ class EmployeeController extends Controller
      */
     public function promoteAction(Employee $employee, Request $request)
     {
-        $form = $this->createForm(EmployeeType::class, new HireEmployeeCommand());
+        $form = $this->createForm(EmployeeType::class, new HireEmployee());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var PromoteEmployeeCommand $employeeCommand */
+            /** @var PromoteEmployee $employeeCommand */
             $employeeCommand = $form->getData();
             $employee->promote(
                 $employeeCommand->getNewPosition(),

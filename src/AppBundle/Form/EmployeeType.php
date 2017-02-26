@@ -2,7 +2,7 @@
 
 namespace Al\AppBundle\Form;
 
-use Al\AppBundle\Employee\PromoteEmployeeCommand;
+use Al\Component\Employee\Command\PromoteEmployee;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
@@ -24,7 +24,7 @@ class EmployeeType extends AbstractType
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
             $employee = $event->getData();
 
-            if ($employee instanceof PromoteEmployeeCommand) {
+            if ($employee instanceof PromoteEmployee) {
                 $form = $event->getForm();
                 $form->remove('name');
             }

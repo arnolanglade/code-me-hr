@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Al\AppBundle\Employee;
+namespace Al\Component\Employee\Command;
 
-final class HireEmployeeCommand
+final class HireEmployee
 {
     /** @var string */
     private $name = '';
