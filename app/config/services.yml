@@ -9,3 +9,6 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
             - 'Component\Employee\Employee'
+
+    hautelook_alice.locator.env_directory:
+        class: 'Infrastructure\Fixtures\FileLocator'

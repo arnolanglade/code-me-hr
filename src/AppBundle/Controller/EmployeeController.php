@@ -6,7 +6,7 @@ use AppBundle\Employee\PromoteEmployeeCommand;
 use AppBundle\Form\EmployeeType;
 use Component\Employee\Employee;
 use AppBundle\Employee\HireEmployeeCommand;
-use Infrastructure\Employee\Search\SearchCriteria;
+use Infrastructure\Employee\Criteria\SearchCriteria;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,10 +24,11 @@ class EmployeeController extends Controller
             (bool) $request->get('is_fired')
         );
 
-        $employees = $this->get('employee.repository')->search($searchCriteria);
+        $paginatedEmployees = $this->get('employee.repository')->match($searchCriteria);
+        $paginatedEmployees->setCurrentPage($request->get('page', 1));
 
         return $this->render('employee/list.html.twig', [
-            'employees' => $employees
+            'employees' => $paginatedEmployees
         ]);
     }
 

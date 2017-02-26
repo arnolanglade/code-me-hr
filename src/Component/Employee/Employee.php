@@ -28,7 +28,7 @@ final class Employee implements EmployeeInterface
         $this->name = $name;
         $this->position = $position;
         $this->salaryScale = $salaryScale;
-        $this->firedAt = true;
+        $this->firedAt = null;
     }
 
     /**

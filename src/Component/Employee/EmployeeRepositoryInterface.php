@@ -19,7 +19,7 @@ interface EmployeeRepositoryInterface
     /**
      * Search employees by criteria
      */
-    public function search(Specification $specification);
+    public function match(Specification $specification);
 
     /**
      * Add an employee

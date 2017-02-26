@@ -11,6 +11,8 @@ use Component\Employee\EmployeeRepositoryInterface;
 use Happyr\DoctrineSpecification\Filter\Filter;
 use Happyr\DoctrineSpecification\Query\QueryModifier;
 use Happyr\DoctrineSpecification\Specification\Specification;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 
 final class EmployeeRepository extends EntityRepository implements EmployeeRepositoryInterface
 {
@@ -26,13 +28,12 @@ final class EmployeeRepository extends EntityRepository implements EmployeeRepos
     /**
      * {@inheritdoc}
      */
-    public function search(Specification $specification)
+    public function match(Specification $specification)
     {
-        $qb = $this->createQueryBuilder('employee');
-        $this->applySpecification($qb, $specification);
-        $query = $qb->getQuery();
+        $queryBuilder = $this->createQueryBuilder('employee');
+        $this->applySpecification($queryBuilder, $specification);
 
-        return $query->getResult();
+        return new Pagerfanta(new DoctrineORMAdapter($queryBuilder));
     }
 
     /**

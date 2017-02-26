@@ -24,11 +24,16 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "twig/twig": "^1.0||^2.0",
         "ramsey/uuid": "^3.5",
-        "happyr/doctrine-specification": "^0.7.1"
+        "happyr/doctrine-specification": "^0.7.1",
+        "white-october/pagerfanta-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "hautelook/alice-bundle": "^2.0@beta",
+        "doctrine/data-fixtures": "^1.2",
+        "nelmio/alice": "^3.0@beta",
+        "theofidry/alice-data-fixtures": "^1.0@beta"
     },
     "scripts": {
         "symfony-scripts": [
@@ -45,11 +50,6 @@
         "post-update-cmd": [
             "@symfony-scripts"
         ]
-    },
-    "config": {
-        "platform": {
-            "php": "5.5.9"
-        }
     },
     "extra": {
         "symfony-app-dir": "app",

@@ -1,11 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Infrastructure\Employee\Search;
+namespace Infrastructure\Employee\Criteria;
 
 use Happyr\DoctrineSpecification\BaseSpecification;
 use Happyr\DoctrineSpecification\Spec;
 use Happyr\DoctrineSpecification\Specification\Specification;
+use Infrastructure\Employee\Criteria\isFiredCriteria;
+use Infrastructure\Employee\Criteria\NameCriteria;
+use Infrastructure\Employee\Criteria\PositionCriteria;
 
 final class SearchCriteria extends BaseSpecification
 {
