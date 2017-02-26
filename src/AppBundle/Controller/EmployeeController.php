@@ -2,6 +2,7 @@
 
 namespace Al\AppBundle\Controller;
 
+use Al\Component\Employee\Command\FireEmployee;
 use Al\Component\Employee\Command\PromoteEmployee;
 use Al\AppBundle\Form\EmployeeType;
 use Al\Component\Employee\Employee;
@@ -21,7 +22,7 @@ class EmployeeController extends Controller
         $searchCriteria = new SearchCriteria(
             $request->get('name'),
             $request->get('position'),
-            (bool) $request->get('is_fired')
+            (bool) $request->get('is_fired', false)
         );
 
         $paginatedEmployees = $this->get('employee.repository')->match($searchCriteria);
@@ -64,15 +65,15 @@ class EmployeeController extends Controller
      */
     public function promoteAction(Employee $employee, Request $request)
     {
-        $form = $this->createForm(EmployeeType::class, new HireEmployee());
+        $form = $this->createForm(EmployeeType::class, new PromoteEmployee());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var PromoteEmployee $employeeCommand */
-            $employeeCommand = $form->getData();
+            /** @var PromoteEmployee $promotion */
+            $promotion = $form->getData();
             $employee->promote(
-                $employeeCommand->getNewPosition(),
-                $employeeCommand->getNewSalaryScale()
+                $promotion->getPosition(),
+                $promotion->getSalaryScale()
             );
 
             $this->get('employee.repository')->add($employee);
@@ -88,10 +89,23 @@ class EmployeeController extends Controller
     /**
      * @Route("/employee/{id}/fire", name="employee_fire")
      */
-    public function fireAction(Employee $employee)
+    public function fireAction(Employee $employee, Request $request)
     {
-        $employee->fire();
+        $form = $this->createForm(EmployeeType::class, new FireEmployee());
+        $form->handleRequest($request);
 
-        $this->get('employee.repository')->add($employee);
+        if ($form->isSubmitted() && $form->isValid()) {
+            /** @var FireEmployee $firing */
+            $firing = $form->getData();
+            $employee->fire($firing->getFiredAt());
+
+            $this->get('employee.repository')->add($employee);
+
+            return $this->redirectToRoute('employee_list');
+        }
+
+        return $this->render('employee/fire.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 }

@@ -6,39 +6,40 @@ namespace Al\Component\Employee\Command;
 final class PromoteEmployee
 {
     /** @var string */
-    private $newPosition = '';
+    private $position = '';
+
     /** @var int */
-    private $newSalaryScale = 0;
+    private $salaryScale = 0;
 
     /**
      * @return string
      */
-    public function getNewPosition(): string
+    public function getPosition(): string
     {
-        return $this->newPosition;
+        return $this->position;
     }
 
     /**
-     * @param string $newPosition
+     * @param string $position
      */
-    public function setNewPosition(string $newPosition)
+    public function setPosition(string $position)
     {
-        $this->newPosition = $newPosition;
+        $this->position = $position;
     }
 
     /**
      * @return int
      */
-    public function getNewSalaryScale(): int
+    public function getSalaryScale(): int
     {
-        return $this->newSalaryScale;
+        return $this->salaryScale;
     }
 
     /**
-     * @param int $newSalaryScale
+     * @param int $withSalaryScale
      */
-    public function setNewSalaryScale(int $newSalaryScale)
+    public function setSalaryScale(int $withSalaryScale)
     {
-        $this->newSalaryScale = $newSalaryScale;
+        $this->salaryScale = $withSalaryScale;
     }
 }

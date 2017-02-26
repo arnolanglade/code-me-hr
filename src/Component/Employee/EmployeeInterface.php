@@ -24,6 +24,8 @@ interface EmployeeInterface
 
     /**
      * Fire him
+     *
+     * @param \DateTime $firedAt
      */
-    public function fire();
+    public function fire(\DateTime $firedAt);
 }

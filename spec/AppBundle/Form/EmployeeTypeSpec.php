@@ -6,6 +6,7 @@ use Al\AppBundle\Form\EmployeeType;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\Test\FormBuilderInterface;
 
 class EmployeeTypeSpec extends ObjectBehavior
@@ -22,9 +23,7 @@ class EmployeeTypeSpec extends ObjectBehavior
 
     function it_build_a_form(FormBuilderInterface $builder)
     {
-        $builder->add('name')->shouldBeCalled()->willReturn($builder);
-        $builder->add('position')->shouldBeCalled()->willReturn($builder);
-        $builder->add('salaryScale')->shouldBeCalled()->willReturn($builder);
+        $builder->addEventListener(FormEvents::PRE_SET_DATA, Argument::any())->shouldBeCalled();
 
         $this->buildForm($builder, [])->shouldReturn(null);
     }

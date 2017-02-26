@@ -51,9 +51,9 @@ final class Employee implements EmployeeInterface
     /**
      * {@inheritdoc}
      */
-    public function fire()
+    public function fire(\DateTime $firedAt)
     {
-        $this->firedAt = new \DateTime('now', new \DateTimeZone('UTC'));
+        $this->firedAt = $firedAt;
     }
 
     /**
