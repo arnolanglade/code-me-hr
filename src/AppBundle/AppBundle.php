@@ -14,7 +14,7 @@ class AppBundle extends Bundle
     public function build(ContainerBuilder $container)
     {
         $container->addCompilerPass(DoctrineOrmMappingsPass::createYamlMappingDriver(
-            [__DIR__.'/../../Al/Infrastructure/Employee/Resources/mapping' => 'Al\Component\Employee'],
+            [__DIR__ . '/../Infrastructure/Employee/Resources/mapping' => 'Al\Component\Employee'],
             ['doctrine.orm.entity_manager']
         ));
     }
