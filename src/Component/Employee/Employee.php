@@ -87,5 +87,4 @@ final class Employee implements EmployeeInterface
     {
         return $this->salaryScale;
     }
-
 }

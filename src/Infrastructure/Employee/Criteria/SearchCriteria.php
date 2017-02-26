@@ -47,6 +47,5 @@ final class SearchCriteria extends BaseSpecification
             new PositionCriteria($this->position),
             new isFiredCriteria($this->isFired)
         );
-
     }
 }
