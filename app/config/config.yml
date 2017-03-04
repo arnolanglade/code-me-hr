@@ -68,3 +68,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# Message bus configuration
+command_bus:
+    command_name_resolver_strategy: named_message

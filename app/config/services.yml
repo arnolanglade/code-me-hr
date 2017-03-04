@@ -1,14 +1,36 @@
-# Learn more about services, parameters and containers at
-# http://symfony.com/doc/current/service_container.html
 parameters:
     al.employee.model: 'Al\Component\Employee\Employee'
 
 services:
-    employee.repository:
+    ### Repository
+    al.employee.repository:
         class: 'Al\Infrastructure\Employee\Repository\EmployeeRepository'
         arguments:
             - '@doctrine.orm.entity_manager'
             - '%al.employee.model%'
 
+    ### Command handler
+    al.employee.handler.hire:
+        class: 'Al\Application\Employee\Handler\HireEmployeeHandler'
+        arguments:
+            - '@al.employee.repository'
+        tags:
+            - { name: command_handler, handles: hire_employee }
+
+    al.employee.handler.promote:
+        class: 'Al\Application\Employee\Handler\PromoteEmployeeHandler'
+        arguments:
+            - '@al.employee.repository'
+        tags:
+            - { name: command_handler, handles: promote_employee }
+
+    al.employee.handler.fire:
+        class: 'Al\Application\Employee\Handler\FireEmployeeHandler'
+        arguments:
+            - '@al.employee.repository'
+        tags:
+            - { name: command_handler, handles: fire_employee }
+
+    ### Fixture loading
     hautelook_alice.locator.env_directory:
         class: 'Al\Infrastructure\Fixtures\FileLocator'

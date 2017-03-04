@@ -2,11 +2,10 @@
 
 namespace Al\AppBundle\Controller;
 
-use Al\Component\Employee\Command\FireEmployee;
-use Al\Component\Employee\Command\PromoteEmployee;
+use Al\Application\Employee\Command\FireEmployee;
+use Al\Application\Employee\Command\PromoteEmployee;
 use Al\AppBundle\Form\EmployeeType;
-use Al\Component\Employee\Employee;
-use Al\Component\Employee\Command\HireEmployee;
+use Al\Application\Employee\Command\HireEmployee;
 use Al\Infrastructure\Employee\Criteria\SearchCriteria;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,6 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class EmployeeController extends Controller
 {
     /**
+     * @Route("/", name="homepage")
      * @Route("/employee", name="employee_list")
      */
     public function listAction(Request $request)
@@ -25,7 +25,7 @@ class EmployeeController extends Controller
             (bool) $request->get('is_fired', false)
         );
 
-        $paginatedEmployees = $this->get('employee.repository')->match($searchCriteria);
+        $paginatedEmployees = $this->get('al.employee.repository')->match($searchCriteria);
         $paginatedEmployees->setCurrentPage($request->get('page', 1));
 
         return $this->render('employee/list.html.twig', [
@@ -44,13 +44,7 @@ class EmployeeController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var HireEmployee $employeeCommand */
             $employeeCommand = $form->getData();
-            $employee = Employee::hire(
-                $employeeCommand->getName(),
-                $employeeCommand->getPosition(),
-                $employeeCommand->getSalaryScale()
-            );
-
-            $this->get('employee.repository')->add($employee);
+            $this->get('command_bus')->handle($employeeCommand);
 
             return $this->redirectToRoute('employee_list');
         }
@@ -61,22 +55,17 @@ class EmployeeController extends Controller
     }
 
     /**
-     * @Route("/employee/{id}/promote", name="employee_promote")
+     * @Route("/employee/{employeeId}/promote", name="employee_promote")
      */
-    public function promoteAction(Employee $employee, Request $request)
+    public function promoteAction($employeeId, Request $request)
     {
-        $form = $this->createForm(EmployeeType::class, new PromoteEmployee());
+        $form = $this->createForm(EmployeeType::class, new PromoteEmployee($employeeId));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var PromoteEmployee $promotion */
-            $promotion = $form->getData();
-            $employee->promote(
-                $promotion->getPosition(),
-                $promotion->getSalaryScale()
-            );
-
-            $this->get('employee.repository')->add($employee);
+            $promotionCommand = $form->getData();
+            $this->get('command_bus')->handle($promotionCommand);
 
             return $this->redirectToRoute('employee_list');
         }
@@ -87,19 +76,17 @@ class EmployeeController extends Controller
     }
 
     /**
-     * @Route("/employee/{id}/fire", name="employee_fire")
+     * @Route("/employee/{employeeId}/fire", name="employee_fire")
      */
-    public function fireAction(Employee $employee, Request $request)
+    public function fireAction($employeeId, Request $request)
     {
-        $form = $this->createForm(EmployeeType::class, new FireEmployee());
+        $form = $this->createForm(EmployeeType::class, new FireEmployee($employeeId));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var FireEmployee $firing */
-            $firing = $form->getData();
-            $employee->fire($firing->getFiredAt());
-
-            $this->get('employee.repository')->add($employee);
+            $firingCommand = $form->getData();
+            $this->get('command_bus')->handle($firingCommand);
 
             return $this->redirectToRoute('employee_list');
         }

@@ -1,12 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Al\Component\Employee\Command;
+namespace Al\Application\Employee\Command;
 
-final class HireEmployee
+use SimpleBus\Message\Name\NamedMessage;
+
+final class PromoteEmployee implements NamedMessage
 {
     /** @var string */
-    private $name = '';
+    private $id;
 
     /** @var string */
     private $position = '';
@@ -14,20 +16,17 @@ final class HireEmployee
     /** @var int */
     private $salaryScale = 0;
 
-    /**
-     * @return string
-     */
-    public function getName(): string
+    public function __construct(string $id)
     {
-        return $this->name;
+        $this->id = $id;
     }
 
     /**
-     * @param string $name
+     * @return string
      */
-    public function setName(string $name)
+    public function getId(): string
     {
-        $this->name = $name;
+        return $this->id;
     }
 
     /**
@@ -60,5 +59,13 @@ final class HireEmployee
     public function setSalaryScale(int $withSalaryScale)
     {
         $this->salaryScale = $withSalaryScale;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function messageName(): string
+    {
+        return 'promote_employee';
     }
 }

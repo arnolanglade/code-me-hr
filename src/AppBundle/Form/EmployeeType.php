@@ -2,9 +2,9 @@
 
 namespace Al\AppBundle\Form;
 
-use Al\Component\Employee\Command\FireEmployee;
-use Al\Component\Employee\Command\HireEmployee;
-use Al\Component\Employee\Command\PromoteEmployee;
+use Al\Application\Employee\Command\FireEmployee;
+use Al\Application\Employee\Command\HireEmployee;
+use Al\Application\Employee\Command\PromoteEmployee;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -30,8 +30,8 @@ class EmployeeType extends AbstractType
 
             if ($employee instanceof PromoteEmployee) {
                 $form = $event->getForm();
-                $form->add('name');
                 $form->add('position');
+                $form->add('salaryScale');
             }
 
             if ($employee instanceof FireEmployee) {
