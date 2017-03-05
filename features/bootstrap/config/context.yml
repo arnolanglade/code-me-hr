@@ -1,0 +1,13 @@
+services:
+    al.context.employee:
+        class: 'Al\Behat\Context\EmployeeContext'
+        arguments:
+            - '@__symfony__.al.employee.repository'
+        tags:
+            - { name: fob.context_service }
+    al.context.database:
+        class: 'Al\Behat\Context\DatabaseContext'
+        arguments:
+            - '@__symfony__.doctrine.orm.entity_manager'
+        tags:
+            - { name: fob.context_service }

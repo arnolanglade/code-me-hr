@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e08495bb0f91d73f4b06ae76f85bc31d",
-    "content-hash": "3ee8b5b7e431d251ebbd8636ec0d5d75",
+    "hash": "342b18760205e4d0ed67ed683779a6a7",
+    "content-hash": "d2c99b8e19dba4d058c0f0b82ca7b7d5",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -61,6 +61,335 @@
                 "validation"
             ],
             "time": "2017-01-24 15:14:39"
+        },
+        {
+            "name": "behat/behat",
+            "version": "v3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Behat.git",
+                "reference": "15a3a1857457eaa29cdf41564a5e421effb09526"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/15a3a1857457eaa29cdf41564a5e421effb09526",
+                "reference": "15a3a1857457eaa29cdf41564a5e421effb09526",
+                "shasum": ""
+            },
+            "require": {
+                "behat/gherkin": "^4.4.4",
+                "behat/transliterator": "~1.0",
+                "container-interop/container-interop": "^1.1",
+                "ext-mbstring": "*",
+                "php": ">=5.3.3",
+                "symfony/class-loader": "~2.1||~3.0",
+                "symfony/config": "~2.3||~3.0",
+                "symfony/console": "~2.5||~3.0",
+                "symfony/dependency-injection": "~2.1||~3.0",
+                "symfony/event-dispatcher": "~2.1||~3.0",
+                "symfony/translation": "~2.3||~3.0",
+                "symfony/yaml": "~2.1||~3.0"
+            },
+            "require-dev": {
+                "herrera-io/box": "~1.6.1",
+                "phpunit/phpunit": "~4.5",
+                "symfony/process": "~2.5|~3.0"
+            },
+            "suggest": {
+                "behat/mink-extension": "for integration with Mink testing framework",
+                "behat/symfony2-extension": "for integration with Symfony2 web framework",
+                "behat/yii-extension": "for integration with Yii web framework"
+            },
+            "bin": [
+                "bin/behat"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Behat": "src/",
+                    "Behat\\Testwork": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Scenario-oriented BDD framework for PHP 5.3",
+            "homepage": "http://behat.org/",
+            "keywords": [
+                "Agile",
+                "BDD",
+                "ScenarioBDD",
+                "Scrum",
+                "StoryBDD",
+                "User story",
+                "business",
+                "development",
+                "documentation",
+                "examples",
+                "symfony",
+                "testing"
+            ],
+            "time": "2016-12-25 13:43:52"
+        },
+        {
+            "name": "behat/gherkin",
+            "version": "v4.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Gherkin.git",
+                "reference": "5c14cff4f955b17d20d088dec1bde61c0539ec74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/5c14cff4f955b17d20d088dec1bde61c0539ec74",
+                "reference": "5c14cff4f955b17d20d088dec1bde61c0539ec74",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5|~5",
+                "symfony/phpunit-bridge": "~2.7|~3",
+                "symfony/yaml": "~2.3|~3"
+            },
+            "suggest": {
+                "symfony/yaml": "If you want to parse features, represented in YAML files"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Gherkin": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Gherkin DSL parser for PHP 5.3",
+            "homepage": "http://behat.org/",
+            "keywords": [
+                "BDD",
+                "Behat",
+                "Cucumber",
+                "DSL",
+                "gherkin",
+                "parser"
+            ],
+            "time": "2016-10-30 11:50:56"
+        },
+        {
+            "name": "behat/mink",
+            "version": "v1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/minkphp/Mink.git",
+                "reference": "e6930b9c74693dff7f4e58577e1b1743399f3ff9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/minkphp/Mink/zipball/e6930b9c74693dff7f4e58577e1b1743399f3ff9",
+                "reference": "e6930b9c74693dff7f4e58577e1b1743399f3ff9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1",
+                "symfony/css-selector": "~2.1|~3.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7|~3.0"
+            },
+            "suggest": {
+                "behat/mink-browserkit-driver": "extremely fast headless driver for Symfony\\Kernel-based apps (Sf2, Silex)",
+                "behat/mink-goutte-driver": "fast headless driver for any app without JS emulation",
+                "behat/mink-selenium2-driver": "slow, but JS-enabled driver for any app (requires Selenium2)",
+                "behat/mink-zombie-driver": "fast and JS-enabled headless driver for any app (requires node.js)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Behat\\Mink\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Browser controller/emulator abstraction for PHP",
+            "homepage": "http://mink.behat.org/",
+            "keywords": [
+                "browser",
+                "testing",
+                "web"
+            ],
+            "time": "2016-03-05 08:26:18"
+        },
+        {
+            "name": "behat/mink-extension",
+            "version": "v2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/MinkExtension.git",
+                "reference": "5b4bda64ff456104564317e212c823e45cad9d59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/MinkExtension/zipball/5b4bda64ff456104564317e212c823e45cad9d59",
+                "reference": "5b4bda64ff456104564317e212c823e45cad9d59",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "~3.0,>=3.0.5",
+                "behat/mink": "~1.5",
+                "php": ">=5.3.2",
+                "symfony/config": "~2.2|~3.0"
+            },
+            "require-dev": {
+                "behat/mink-goutte-driver": "~1.1",
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "behat-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\MinkExtension": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                },
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com"
+                }
+            ],
+            "description": "Mink extension for Behat",
+            "homepage": "http://extensions.behat.org/mink",
+            "keywords": [
+                "browser",
+                "gui",
+                "test",
+                "web"
+            ],
+            "time": "2016-02-15 07:55:18"
+        },
+        {
+            "name": "behat/transliterator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Transliterator.git",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Transliterator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Artistic-1.0"
+            ],
+            "description": "String transliterator",
+            "keywords": [
+                "i18n",
+                "slug",
+                "transliterator"
+            ],
+            "time": "2015-09-28 16:26:35"
+        },
+        {
+            "name": "container-interop/container-interop",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/container-interop/container-interop.git",
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+                "shasum": ""
+            },
+            "require": {
+                "psr/container": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Container\\": "src/Interop/Container/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
+            "homepage": "https://github.com/container-interop/container-interop",
+            "time": "2017-02-14 19:40:03"
         },
         {
             "name": "doctrine/annotations",
@@ -1065,6 +1394,170 @@
             "time": "2016-11-26 00:15:39"
         },
         {
+            "name": "nikic/php-parser",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "4dd659edadffdc2143e4753df655d866dbfeedf0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4dd659edadffdc2143e4753df655d866dbfeedf0",
+                "reference": "4dd659edadffdc2143e4753df655d866dbfeedf0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/php-parse"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpParser\\": "lib/PhpParser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov"
+                }
+            ],
+            "description": "A PHP parser written in PHP",
+            "keywords": [
+                "parser",
+                "php"
+            ],
+            "time": "2016-09-16 12:04:44"
+        },
+        {
+            "name": "ocramius/code-generator-utils",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ocramius/CodeGenerationUtils.git",
+                "reference": "7dc0be1dec3376d95ba094688f0d84f7cf95f300"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ocramius/CodeGenerationUtils/zipball/7dc0be1dec3376d95ba094688f0d84f7cf95f300",
+                "reference": "7dc0be1dec3376d95ba094688f0d84f7cf95f300",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "~2.0",
+                "php": "~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeGenerationUtils\\": "src/CodeGenerationUtils"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.com/"
+                }
+            ],
+            "description": "A set of code generator utilities built on top of PHP-Parsers that ease its use when combined with Reflection",
+            "homepage": "https://github.com/Ocramius/CodeGenerationUtils",
+            "keywords": [
+                "code generation",
+                "compiler",
+                "parser",
+                "php code",
+                "reflection"
+            ],
+            "time": "2016-01-12 09:22:58"
+        },
+        {
+            "name": "ocramius/generated-hydrator",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ocramius/GeneratedHydrator.git",
+                "reference": "98a731e7d4e393513cb6f4e7f120da853680fb50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ocramius/GeneratedHydrator/zipball/98a731e7d4e393513cb6f4e7f120da853680fb50",
+                "reference": "98a731e7d4e393513cb6f4e7f120da853680fb50",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "~2.0",
+                "ocramius/code-generator-utils": "0.4.*",
+                "php": "~7.0",
+                "zendframework/zend-hydrator": "^2.0"
+            },
+            "require-dev": {
+                "athletic/athletic": "~0.1.6",
+                "phpunit/phpunit": "~5.0",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "GeneratedHydrator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.com/"
+                }
+            ],
+            "description": "An Object Hydrator that allows very fast array to object to array conversion",
+            "homepage": "https://github.com/Ocramius/GeneratedHydrator",
+            "keywords": [
+                "array conversion",
+                "hydrator",
+                "object conversion",
+                "performance",
+                "serializer"
+            ],
+            "time": "2016-01-12 11:39:06"
+        },
+        {
             "name": "pagerfanta/pagerfanta",
             "version": "v1.0.4",
             "source": {
@@ -1224,6 +1717,55 @@
                 "psr-6"
             ],
             "time": "2016-08-06 20:24:11"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14 16:28:37"
         },
         {
             "name": "psr/log",
@@ -2453,9 +2995,227 @@
                 "paging"
             ],
             "time": "2017-02-10 16:54:59"
+        },
+        {
+            "name": "zendframework/zend-hydrator",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-hydrator.git",
+                "reference": "0ac0d3e569781f1895670b0c8d0dc7f25b8a3182"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-hydrator/zipball/0ac0d3e569781f1895670b0c8d0dc7f25b8a3182",
+                "reference": "0ac0d3e569781f1895670b0c8d0dc7f25b8a3182",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0",
+                "zendframework/zend-stdlib": "^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5",
+                "squizlabs/php_codesniffer": "^2.3.1",
+                "zendframework/zend-eventmanager": "^3.0",
+                "zendframework/zend-filter": "^2.6",
+                "zendframework/zend-inputfilter": "^2.6",
+                "zendframework/zend-serializer": "^2.6.1",
+                "zendframework/zend-servicemanager": "^2.7.5 || ^3.0.3"
+            },
+            "suggest": {
+                "zendframework/zend-eventmanager": "^2.6.2 || ^3.0, to support aggregate hydrator usage",
+                "zendframework/zend-filter": "^2.6, to support naming strategy hydrator usage",
+                "zendframework/zend-serializer": "^2.6.1, to use the SerializableStrategy",
+                "zendframework/zend-servicemanager": "^2.7.5 || ^3.0.3, to support hydrator plugin manager usage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-release-1.0": "1.0-dev",
+                    "dev-release-1.1": "1.1-dev",
+                    "dev-master": "2.2-dev",
+                    "dev-develop": "2.3-dev"
+                },
+                "zf": {
+                    "component": "Zend\\Hydrator",
+                    "config-provider": "Zend\\Hydrator\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Hydrator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zend-hydrator",
+            "keywords": [
+                "hydrator",
+                "zf2"
+            ],
+            "time": "2016-04-18 17:59:29"
+        },
+        {
+            "name": "zendframework/zend-stdlib",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-stdlib.git",
+                "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/debedcfc373a293f9250cc9aa03cf121428c8e78",
+                "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "athletic/athletic": "~0.1",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "^2.6.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev",
+                    "dev-develop": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Stdlib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zend-stdlib",
+            "keywords": [
+                "stdlib",
+                "zf2"
+            ],
+            "time": "2016-09-13 14:38:50"
         }
     ],
     "packages-dev": [
+        {
+            "name": "behat/mink-browserkit-driver",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/minkphp/MinkBrowserKitDriver.git",
+                "reference": "10e67fb4a295efcd62ea0bf16025a85ea19534fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/minkphp/MinkBrowserKitDriver/zipball/10e67fb4a295efcd62ea0bf16025a85ea19534fb",
+                "reference": "10e67fb4a295efcd62ea0bf16025a85ea19534fb",
+                "shasum": ""
+            },
+            "require": {
+                "behat/mink": "^1.7.1@dev",
+                "php": ">=5.3.6",
+                "symfony/browser-kit": "~2.3|~3.0",
+                "symfony/dom-crawler": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "silex/silex": "~1.2",
+                "symfony/phpunit-bridge": "~2.7|~3.0"
+            },
+            "type": "mink-driver",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Behat\\Mink\\Driver\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Symfony2 BrowserKit driver for Mink framework",
+            "homepage": "http://mink.behat.org/",
+            "keywords": [
+                "Mink",
+                "Symfony2",
+                "browser",
+                "testing"
+            ],
+            "time": "2016-03-05 08:59:47"
+        },
+        {
+            "name": "behat/mink-goutte-driver",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/minkphp/MinkGoutteDriver.git",
+                "reference": "8b9ad6d2d95bc70b840d15323365f52fcdaea6ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/minkphp/MinkGoutteDriver/zipball/8b9ad6d2d95bc70b840d15323365f52fcdaea6ca",
+                "reference": "8b9ad6d2d95bc70b840d15323365f52fcdaea6ca",
+                "shasum": ""
+            },
+            "require": {
+                "behat/mink": "~1.6@dev",
+                "behat/mink-browserkit-driver": "~1.2@dev",
+                "fabpot/goutte": "~1.0.4|~2.0|~3.1",
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7|~3.0"
+            },
+            "type": "mink-driver",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Behat\\Mink\\Driver\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Goutte driver for Mink framework",
+            "homepage": "http://mink.behat.org/",
+            "keywords": [
+                "browser",
+                "goutte",
+                "headless",
+                "testing"
+            ],
+            "time": "2016-03-05 09:04:22"
+        },
         {
             "name": "doctrine/data-fixtures",
             "version": "v1.2.2",
@@ -2514,6 +3274,203 @@
                 "database"
             ],
             "time": "2016-09-20 10:07:57"
+        },
+        {
+            "name": "fabpot/goutte",
+            "version": "v3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfPHP/Goutte.git",
+                "reference": "db5c28f4a010b4161d507d5304e28a7ebf211638"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfPHP/Goutte/zipball/db5c28f4a010b4161d507d5304e28a7ebf211638",
+                "reference": "db5c28f4a010b4161d507d5304e28a7ebf211638",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0",
+                "php": ">=5.5.0",
+                "symfony/browser-kit": "~2.1|~3.0",
+                "symfony/css-selector": "~2.1|~3.0",
+                "symfony/dom-crawler": "~2.1|~3.0"
+            },
+            "type": "application",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Goutte\\": "Goutte"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "A simple PHP Web Scraper",
+            "homepage": "https://github.com/FriendsOfPHP/Goutte",
+            "keywords": [
+                "scraper"
+            ],
+            "time": "2017-01-03 13:21:43"
+        },
+        {
+            "name": "friends-of-behat/context-service-extension",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfBehat/ContextServiceExtension.git",
+                "reference": "c63bfeb6a5c4b1cf2b88914d7a06a3a95dc9650e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfBehat/ContextServiceExtension/zipball/c63bfeb6a5c4b1cf2b88914d7a06a3a95dc9650e",
+                "reference": "c63bfeb6a5c4b1cf2b88914d7a06a3a95dc9650e",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "^3.1",
+                "php": "^5.6|^7.0",
+                "symfony/dependency-injection": "^2.8|^3.0"
+            },
+            "require-dev": {
+                "friends-of-behat/cross-container-extension": "^0.1.3",
+                "friends-of-behat/test-context": "^0.3",
+                "phpspec/phpspec": "^3.1"
+            },
+            "suggest": {
+                "friends-of-behat/cross-container-extension": "^0.1",
+                "ocramius/proxy-manager": "^1.0|^2.0",
+                "symfony/proxy-manager-bridge": "^2.8|^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfBehat\\ContextServiceExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamil Kokot",
+                    "email": "kamil@kokot.me",
+                    "homepage": "http://kamil.kokot.me"
+                }
+            ],
+            "description": "Allows to declare and use contexts services in scenario scoped container.",
+            "time": "2016-11-03 15:23:17"
+        },
+        {
+            "name": "friends-of-behat/cross-container-extension",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfBehat/CrossContainerExtension.git",
+                "reference": "d40f5c722efe9d94c531b8ac207f13f5937fbcf2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfBehat/CrossContainerExtension/zipball/d40f5c722efe9d94c531b8ac207f13f5937fbcf2",
+                "reference": "d40f5c722efe9d94c531b8ac207f13f5937fbcf2",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "^3.1",
+                "php": "^5.6|^7.0",
+                "symfony/dependency-injection": "^2.8|^3.0"
+            },
+            "require-dev": {
+                "friends-of-behat/test-context": "^0.3",
+                "phpspec/phpspec": "^3.1",
+                "phpunit/phpunit": "^5.6",
+                "symfony/http-kernel": "^2.8|^3.0"
+            },
+            "suggest": {
+                "symfony/http-kernel": "^2.8|^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfBehat\\CrossContainerExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamil Kokot",
+                    "email": "kamil@kokot.me",
+                    "homepage": "http://kamil.kokot.me"
+                }
+            ],
+            "description": "Makes possible to inject services and parameters from other containers.",
+            "time": "2017-02-16 20:49:33"
+        },
+        {
+            "name": "friends-of-behat/symfony-extension",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfBehat/SymfonyExtension.git",
+                "reference": "293d02deb525015b13eeedc7c76982f0a87eb4a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfBehat/SymfonyExtension/zipball/293d02deb525015b13eeedc7c76982f0a87eb4a1",
+                "reference": "293d02deb525015b13eeedc7c76982f0a87eb4a1",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "^3.1",
+                "php": "^5.6|^7.0",
+                "symfony/http-kernel": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "behat/mink": "^1.7",
+                "behat/mink-browserkit-driver": "^1.3",
+                "behat/mink-extension": "^2.2",
+                "friends-of-behat/cross-container-extension": "^0.1",
+                "friends-of-behat/test-context": "^0.3",
+                "symfony/framework-bundle": "^2.7|^3.0"
+            },
+            "suggest": {
+                "behat/mink-browserkit-driver": "^1.3",
+                "friends-of-behat/cross-container-extension": "^0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfBehat\\SymfonyExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamil Kokot",
+                    "email": "kamil@kokot.me",
+                    "homepage": "http://kamil.kokot.me"
+                }
+            ],
+            "description": "Integrates Behat with Symfony (both 2 and 3).",
+            "time": "2016-11-03 13:38:02"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -2623,6 +3580,184 @@
                 "fixtures"
             ],
             "time": "2016-04-29 12:21:54"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.0",
+                "psr/log": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.2-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2017-02-28 22:50:30"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-12-20 10:07:11"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/0d6c7ca039329247e4f0f8f8f6506810e8248855",
+                "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "homepage": "https://github.com/Tobion"
+                }
+            ],
+            "description": "PSR-7 message implementation that also provides common utility methods",
+            "keywords": [
+                "http",
+                "message",
+                "request",
+                "response",
+                "stream",
+                "uri",
+                "url"
+            ],
+            "time": "2017-02-27 10:51:17"
         },
         {
             "name": "hautelook/alice-bundle",
@@ -3175,6 +4310,56 @@
                 "stub"
             ],
             "time": "2016-11-21 14:58:47"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06 14:39:51"
         },
         {
             "name": "sebastian/comparator",
@@ -3762,7 +4947,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5.9"
+        "php": ">=7.0"
     },
     "platform-dev": []
 }

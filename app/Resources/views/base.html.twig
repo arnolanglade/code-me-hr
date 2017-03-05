@@ -21,8 +21,14 @@
             <a href="{{ path('employee_list') }}" class="item">Employees</a>
         </div>
     </div>
-
     <div class="ui main text container">
+        {% for type, flash_messages in app.session.flashBag.all %}
+            {% for flash_message in flash_messages %}
+                <div class="ui {{ type }} message">
+                    <p>{{ flash_message }}</p>
+                </div>
+            {% endfor %}
+        {% endfor %}
         {% block content %}{% endblock %}
     </div>
 </body>

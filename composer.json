@@ -8,10 +8,13 @@
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
     "autoload-dev": {
-        "psr-4": { "Tests\\": "tests/" }
+        "psr-4": {
+            "Tests\\": "tests/",
+            "Al\\Behat\\": "features/bootstrap/"
+        }
     },
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.0",
         "symfony/symfony": "3.2.*",
         "doctrine/orm": "^2.5",
         "doctrine/doctrine-bundle": "^1.6",
@@ -36,7 +39,13 @@
         "hautelook/alice-bundle": "^2.0@beta",
         "doctrine/data-fixtures": "^1.2",
         "nelmio/alice": "^3.0@beta",
-        "theofidry/alice-data-fixtures": "^1.0@beta"
+        "theofidry/alice-data-fixtures": "^1.0@beta",
+        "behat/behat": "^3.3",
+        "behat/mink-goutte-driver": "^1.2",
+        "behat/mink-extension": "^2.2",
+        "friends-of-behat/symfony-extension": "^0.2.1",
+        "friends-of-behat/context-service-extension": "^0.3.0",
+        "friends-of-behat/cross-container-extension": "^0.2.1"
     },
     "scripts": {
         "symfony-scripts": [

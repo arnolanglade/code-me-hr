@@ -22,8 +22,8 @@
             <td>{{ employee.position }}</td>
             <td>{{ employee.salaryScale }}</td>
             <td>
-                <a href="{{ path('employee_promote', {'employeeId': employee.id }) }}" class="ui button">Promote</a>
-                <a href="{{ path('employee_fire', {'employeeId': employee.id }) }}" class="ui red button">Fire</a>
+                <a href="{{ path('employee_promote', {'employeeId': employee.id }) }}" class="ui button promote">Promote</a>
+                <a href="{{ path('employee_fire', {'employeeId': employee.id }) }}" class="ui red button fire">Fire</a>
             </td>
         </tr>
         {% endfor %}

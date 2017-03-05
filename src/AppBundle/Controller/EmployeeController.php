@@ -44,7 +44,13 @@ class EmployeeController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var HireEmployee $employeeCommand */
             $employeeCommand = $form->getData();
-            $this->get('command_bus')->handle($employeeCommand);
+
+            try {
+                $this->get('command_bus')->handle($employeeCommand);
+                $this->addFlash('success', 'New employee has been successfully added!');
+            } catch (\Exception $e) {
+                $this->addFlash('negative', 'An error occurs, please contact an administrator');
+            }
 
             return $this->redirectToRoute('employee_list');
         }
@@ -65,7 +71,16 @@ class EmployeeController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var PromoteEmployee $promotion */
             $promotionCommand = $form->getData();
-            $this->get('command_bus')->handle($promotionCommand);
+
+            try {
+                $this->get('command_bus')->handle($promotionCommand);
+                $this->addFlash(
+                    'success',
+                    sprintf('%s has been successfully promoted to %s!', 'TODO', $promotionCommand->getPosition())
+                );
+            } catch (\Exception $e) {
+                $this->addFlash('negative', 'An error occurs, please contact an administrator');
+            }
 
             return $this->redirectToRoute('employee_list');
         }
@@ -86,7 +101,13 @@ class EmployeeController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var FireEmployee $firing */
             $firingCommand = $form->getData();
-            $this->get('command_bus')->handle($firingCommand);
+
+            try {
+                $this->get('command_bus')->handle($firingCommand);
+                $this->addFlash('success', sprintf('%s has been successfully fired!', 'TODO'));
+            } catch (\Exception $e) {
+                $this->addFlash('negative', 'An error occurs, please contact an administrator');
+            }
 
             return $this->redirectToRoute('employee_list');
         }
