@@ -47,7 +47,6 @@ class EmployeeController extends Controller
 
             try {
                 $this->get('command_bus')->handle($employeeCommand);
-                $this->addFlash('success', 'New employee has been successfully added!');
             } catch (\Exception $e) {
                 $this->addFlash('negative', 'An error occurs, please contact an administrator');
             }
@@ -74,10 +73,6 @@ class EmployeeController extends Controller
 
             try {
                 $this->get('command_bus')->handle($promotionCommand);
-                $this->addFlash(
-                    'success',
-                    sprintf('%s has been successfully promoted to %s!', 'TODO', $promotionCommand->getPosition())
-                );
             } catch (\Exception $e) {
                 $this->addFlash('negative', 'An error occurs, please contact an administrator');
             }
@@ -104,7 +99,6 @@ class EmployeeController extends Controller
 
             try {
                 $this->get('command_bus')->handle($firingCommand);
-                $this->addFlash('success', sprintf('%s has been successfully fired!', 'TODO'));
             } catch (\Exception $e) {
                 $this->addFlash('negative', 'An error occurs, please contact an administrator');
             }

@@ -12,8 +12,6 @@ default:
                     goutte: ~
     suites:
         employee:
-            contexts:
-                - 'Behat\MinkExtension\Context\MinkContext'
             contexts_services:
                 - al.context.employee
                 - al.context.database

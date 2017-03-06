@@ -17,3 +17,4 @@
 /web/bundles/
 behat.yml
 phpspec.yml
+.phpspec/class.tpl

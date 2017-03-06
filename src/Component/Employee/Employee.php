@@ -3,10 +3,17 @@ declare(strict_types=1);
 
 namespace Al\Component\Employee;
 
+use Al\Component\Employee\Event\EmployeeFired;
+use Al\Component\Employee\Event\EmployeeHired;
+use Al\Component\Employee\Event\EmployeePromoted;
 use Ramsey\Uuid\Uuid;
+use SimpleBus\Message\Recorder\ContainsRecordedMessages;
+use SimpleBus\Message\Recorder\PrivateMessageRecorderCapabilities;
 
-final class Employee implements EmployeeInterface
+final class Employee implements EmployeeInterface, ContainsRecordedMessages
 {
+    use PrivateMessageRecorderCapabilities;
+
     /** @var string */
     private $id;
 
@@ -29,6 +36,8 @@ final class Employee implements EmployeeInterface
         $this->position = $position;
         $this->salaryScale = $salaryScale;
         $this->firedAt = null;
+
+        $this->record(new EmployeeHired((string)$this->id, $this->name, $this->position));
     }
 
     /**
@@ -46,6 +55,8 @@ final class Employee implements EmployeeInterface
     {
         $this->position = $toNewPosition;
         $this->salaryScale = $withNewSalaryScale;
+
+        $this->record(new EmployeePromoted((string)$this->id, $this->name, $this->position));
     }
 
     /**
@@ -54,6 +65,8 @@ final class Employee implements EmployeeInterface
     public function fire(\DateTime $firedAt)
     {
         $this->firedAt = $firedAt;
+
+        $this->record(new EmployeeFired((string)$this->id, $this->name, $this->position));
     }
 
     /**

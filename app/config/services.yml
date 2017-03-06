@@ -31,6 +31,16 @@ services:
         tags:
             - { name: command_handler, handles: fire_employee }
 
+    ### Event subscriber
+    al.employee.event_subscriber.flash_message:
+        class: 'Al\Application\Employee\EventListener\FlashMessageSubscriber'
+        arguments:
+            - '@session'
+        tags:
+            - { name: event_subscriber, subscribes_to: employee_hired, method: sendHiredFlashMassage }
+            - { name: event_subscriber, subscribes_to: employee_promoted, method: sendPromotedFlashMassage  }
+            - { name: event_subscriber, subscribes_to: employee_fired, method: sendFiredFlashMassage  }
+
     ### Fixture loading
     hautelook_alice.locator.env_directory:
         class: 'Al\Infrastructure\Fixtures\FileLocator'
