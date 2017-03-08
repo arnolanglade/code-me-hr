@@ -45,7 +45,7 @@
         "behat/mink-extension": "^2.2",
         "friends-of-behat/symfony-extension": "^0.2.1",
         "friends-of-behat/context-service-extension": "^0.3.0",
-        "friends-of-behat/cross-container-extension": "^0.2.1"
+        "friends-of-behat/cross-container-extension": "^0.3"
     },
     "scripts": {
         "symfony-scripts": [

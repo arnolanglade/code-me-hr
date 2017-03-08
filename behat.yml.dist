@@ -1,17 +1,18 @@
 default:
     extensions:
-        FriendsOfBehat\CrossContainerExtension: ~
+        Behat\MinkExtension:
+            base_url: 'http://127.0.0.1:8000'
+            sessions:
+                symfony:
+                    symfony: ~
         FriendsOfBehat\SymfonyExtension: ~
         FriendsOfBehat\ContextServiceExtension:
             imports:
                - "features/bootstrap/config/context.yml"
-        Behat\MinkExtension:
-            base_url: 'http://127.0.0.1:8000'
-            sessions:
-                default:
-                    goutte: ~
+        FriendsOfBehat\CrossContainerExtension: ~
     suites:
         employee:
             contexts_services:
                 - al.context.employee
                 - al.context.database
+                - mink.context

@@ -3,11 +3,19 @@ services:
         class: 'Al\Behat\Context\EmployeeContext'
         arguments:
             - '@__symfony__.al.employee.repository'
+        calls:
+            - [setMink, ['@__behat__.mink']]
         tags:
             - { name: fob.context_service }
     al.context.database:
         class: 'Al\Behat\Context\DatabaseContext'
         arguments:
             - '@__symfony__.doctrine.orm.entity_manager'
+        tags:
+            - { name: fob.context_service }
+    mink.context:
+        class: 'Behat\MinkExtension\Context\MinkContext'
+        calls:
+            - [setMink, ['@__behat__.mink']]
         tags:
             - { name: fob.context_service }

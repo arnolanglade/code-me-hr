@@ -16,17 +16,18 @@
         </tr>
         </thead>
         <tbody>
-        {% for employee in employees %}
-        <tr>
-            <td>{{ employee.name }}</td>
-            <td>{{ employee.position }}</td>
-            <td>{{ employee.salaryScale }}</td>
-            <td>
-                <a href="{{ path('employee_promote', {'employeeId': employee.id }) }}" class="ui button promote">Promote</a>
-                <a href="{{ path('employee_fire', {'employeeId': employee.id }) }}" class="ui red button fire">Fire</a>
-            </td>
-        </tr>
-        {% endfor %}
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.position }}</td>
+                <td>{{ employee.salaryScale }}</td>
+                <td>
+                    <a href="{{ path('employee_promote', {'employeeId': employee.id }) }}" class="ui button promote">Promote</a>
+                    <a href="{{ path('employee_fire', {'employeeId': employee.id }) }}" class="ui red button fire">Fire</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
     {{ pagerfanta(employees, 'semantic_ui_translated', { 'omitFirstPage': true }) }}
 {% endblock %}

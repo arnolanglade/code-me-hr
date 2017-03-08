@@ -17,27 +17,29 @@ Feature: Manage employees informations
     Then I should see 5 employees
 
   Scenario: Hire an employee
-    Given I am on the homepage
+    Given I am on employee list page
+    Then I should be on the employee list page
     When I follow "New employee"
     And I fill in "Name" with "Olivier"
     And I fill in "Position" with "Trainee"
     And I fill in "Salary scale" with "1"
     And I press "Validate"
     Then I should be on the employee list page
-    And I should see "New employee has been successfully added!"
+    And I should see "Olivier joins your company as Trainee!"
 
   Scenario: Promote an employee
     Given I am on the homepage
-    When I want to promote "Oliver"
+    When I want to promote "Willy"
     And I fill in "Position" with "Dev"
     And I fill in "Salary scale" with "5"
-    And I press "Validate"
+    And I press "Promote"
     Then I should be on the employee list page
-    And I should see "Olivier has been successfully promoted to Dev!"
+    And I should see "Willy has been successfully promoted to Dev!"
 
   Scenario: Fire an employee
     Given I am on the homepage
     When I want to fire "Pipou"
-    And I press "Validate"
+    And I fill in "Fired at" with "2012-12-12"
+    And I press "Fire"
     Then I should be on the employee list page
-    And I should see "Pipou has been successfully fired!"
+    And I should see "Pipou (Dev) has been successfully fired!"

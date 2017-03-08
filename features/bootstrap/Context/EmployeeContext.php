@@ -71,7 +71,7 @@ final class EmployeeContext extends RawMinkContext implements Context
      */
     public function iShouldSeeEmployees($expectedCount)
     {
-        $rows = $this->getSession()->getPage()->find('css', 'table tr');
+        $rows = $this->getSession()->getPage()->findAll('css', 'table tbody tr');
 
         Assert::count($rows, $expectedCount);
     }
@@ -102,7 +102,7 @@ final class EmployeeContext extends RawMinkContext implements Context
     private function findEmployeeInTable(string $name): NodeElement
     {
         $selectorType = 'css';
-        $selector = sprintf('table tr:contains("%s")', $name);
+        $selector = sprintf('table tbody tr:contains("%s")', $name);
 
         if (null === $row = $this->getSession()->getPage()->find($selectorType, $selector, $name)) {
             throw new ElementNotFoundException($this->getSession()->getDriver(), 'element', $selectorType, $selector);
