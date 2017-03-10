@@ -5,7 +5,7 @@
 {% block content %}
     <h1 class="ui dividing header">Employee</h1>
 
-    {{ form_start(form) }}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
         {{ form_widget(form) }}
         <a href="{{ path('employee_list') }}" class="ui button">
             Back to the list

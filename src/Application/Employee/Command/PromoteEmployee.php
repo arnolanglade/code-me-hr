@@ -33,7 +33,7 @@ final class PromoteEmployee implements NamedMessage
     /**
      * @return string
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->id;
     }
@@ -41,15 +41,15 @@ final class PromoteEmployee implements NamedMessage
     /**
      * @return string
      */
-    public function getPosition(): string
+    public function getPosition()
     {
-        return $this->position;
+        return (string) $this->position;
     }
 
     /**
      * @param string $position
      */
-    public function setPosition(string $position)
+    public function setPosition($position)
     {
         $this->position = $position;
     }
@@ -57,15 +57,15 @@ final class PromoteEmployee implements NamedMessage
     /**
      * @return int
      */
-    public function getSalaryScale(): int
+    public function getSalaryScale()
     {
-        return $this->salaryScale;
+        return (int) $this->salaryScale;
     }
 
     /**
      * @param int $withSalaryScale
      */
-    public function setSalaryScale(int $withSalaryScale)
+    public function setSalaryScale($withSalaryScale)
     {
         $this->salaryScale = $withSalaryScale;
     }
@@ -73,7 +73,7 @@ final class PromoteEmployee implements NamedMessage
     /**
      * {@inheritdoc}
      */
-    public static function messageName(): string
+    public static function messageName()
     {
         return 'promote_employee';
     }

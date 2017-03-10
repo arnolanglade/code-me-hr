@@ -22,7 +22,7 @@ final class FireEmployee implements NamedMessage
     /** @var \DateTime */
     private $firedAt;
 
-    public function __construct(string $id)
+    public function __construct($id)
     {
         $this->id = $id;
     }
@@ -30,7 +30,7 @@ final class FireEmployee implements NamedMessage
     /**
      * @return string
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->id;
     }
@@ -47,7 +47,7 @@ final class FireEmployee implements NamedMessage
     /**
      * @param \DateTime $fireAt
      */
-    public function setFiredAt(\DateTime $fireAt)
+    public function setFiredAt($fireAt)
     {
         $this->firedAt = $fireAt;
     }
@@ -55,7 +55,7 @@ final class FireEmployee implements NamedMessage
     /**
      * {@inheritdoc}
      */
-    public static function messageName(): string
+    public static function messageName()
     {
         return 'fire_employee';
     }

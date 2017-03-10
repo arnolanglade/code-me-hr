@@ -1,0 +1,4 @@
+Al\Application\Employee\Command\FireEmployee:
+    properties:
+        firedAt:
+            - NotBlank: ~

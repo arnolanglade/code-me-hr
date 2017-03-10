@@ -28,15 +28,15 @@ final class HireEmployee implements NamedMessage
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
-        return $this->name;
+        return (string) $this->name;
     }
 
     /**
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -44,15 +44,15 @@ final class HireEmployee implements NamedMessage
     /**
      * @return string
      */
-    public function getPosition(): string
+    public function getPosition()
     {
-        return $this->position;
+        return (string) $this->position;
     }
 
     /**
      * @param string $position
      */
-    public function setPosition(string $position)
+    public function setPosition($position)
     {
         $this->position = $position;
     }
@@ -60,15 +60,15 @@ final class HireEmployee implements NamedMessage
     /**
      * @return int
      */
-    public function getSalaryScale(): int
+    public function getSalaryScale()
     {
-        return $this->salaryScale;
+        return (int) $this->salaryScale;
     }
 
     /**
      * @param int $withSalaryScale
      */
-    public function setSalaryScale(int $withSalaryScale)
+    public function setSalaryScale($withSalaryScale)
     {
         $this->salaryScale = $withSalaryScale;
     }
@@ -76,7 +76,7 @@ final class HireEmployee implements NamedMessage
     /**
      * {@inheritdoc}
      */
-    public static function messageName(): string
+    public static function messageName()
     {
         return 'hire_employee';
     }

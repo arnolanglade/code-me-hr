@@ -3,6 +3,7 @@
 namespace spec\Al\AppBundle;
 
 use Al\AppBundle\AppBundle;
+use Al\AppBundle\DependencyInjection\Compiler\ValidatorPass;
 use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -24,6 +25,7 @@ class AppBundleSpec extends ObjectBehavior
     function it_create_a_doctrine_mapping_driver(ContainerBuilder $container)
     {
         $container->addCompilerPass(Argument::type(DoctrineOrmMappingsPass::class))->shouldBeCalled();
+        $container->addCompilerPass(Argument::type(ValidatorPass::class))->shouldBeCalled();
 
         $this->build($container)->shouldReturn(null);
     }

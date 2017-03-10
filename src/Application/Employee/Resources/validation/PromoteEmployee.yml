@@ -1,0 +1,9 @@
+Al\Application\Employee\Command\PromoteEmployee:
+    properties:
+        position:
+            - NotBlank: ~
+        salaryScale:
+            - NotBlank: ~
+            - Range:
+                min: 1
+                max: 15
