@@ -33,7 +33,7 @@ final class FireEmployeeHandler
      */
     public function handle(FireEmployee $command)
     {
-        $employee = $this->employeeRepository->find($command->getId());
+        $employee = $this->employeeRepository->get($command->getId());
 
         $employee->fire($command->getFiredAt());
 

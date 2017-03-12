@@ -29,7 +29,7 @@ class PromoteEmployeeHandlerSpec extends ObjectBehavior
         $command->setPosition('position');
         $command->setSalaryScale(1);
 
-        $employeeRepository->find(Argument::type(Uuid::class))->willReturn($employee);
+        $employeeRepository->get(Argument::type(Uuid::class))->willReturn($employee);
         $employee->promote('position', 1)->shouldBeCalled();
         $employeeRepository->add($employee)->shouldBeCalled();
 

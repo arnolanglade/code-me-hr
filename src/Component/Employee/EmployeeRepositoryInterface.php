@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Al\Component\Employee;
 
+use Al\Component\Employee\Exception\NotExistingEmployee;
 use Ramsey\Uuid\Uuid;
 
 interface EmployeeRepositoryInterface
@@ -21,9 +22,11 @@ interface EmployeeRepositoryInterface
      *
      * @param $identifier
      *
-     * @return EmployeeInterface|null
+     * @return EmployeeInterface
+     *
+     * @throws NotExistingEmployee
      */
-    public function find(Uuid $identifier);
+    public function get(Uuid $identifier);
 
     /**
      * Add an employee

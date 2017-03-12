@@ -28,7 +28,7 @@ class FireEmployeeHandlerSpec extends ObjectBehavior
         $command = new FireEmployee('03a368d5-85b2-46cf-a860-ab22101827d8');
         $command->setFiredAt($firedAt);
 
-        $employeeRepository->find(Argument::type(Uuid::class))->willReturn($employee);
+        $employeeRepository->get(Argument::type(Uuid::class))->willReturn($employee);
         $employee->fire($firedAt)->shouldBeCalled();
         $employeeRepository->add($employee)->shouldBeCalled();
 

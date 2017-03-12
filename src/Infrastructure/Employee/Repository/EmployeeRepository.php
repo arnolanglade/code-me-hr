@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace Al\Infrastructure\Employee\Repository;
 
 use Al\Component\Employee\Employee;
+use Al\Component\Employee\Exception\NotExistingEmployee;
 use Doctrine\ORM\EntityManager;
 use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
@@ -34,9 +35,13 @@ final class EmployeeRepository implements EmployeeRepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function find(Uuid $identifier)
+    public function get(Uuid $identifier)
     {
-        return $this->entityManager->find(Employee::class, $identifier);
+        if (null === $employee = $this->entityManager->find(Employee::class, (string) $identifier->toString())) {
+            throw new NotExistingEmployee((string) $identifier->toString());
+        }
+
+        return $employee;
     }
 
     /**

@@ -14,7 +14,6 @@ namespace Al\Application\Employee\Handler;
 
 use Al\Application\Employee\Command\PromoteEmployee;
 use Al\Component\Employee\EmployeeRepositoryInterface;
-use Ramsey\Uuid\Uuid;
 
 final class PromoteEmployeeHandler
 {
@@ -34,7 +33,7 @@ final class PromoteEmployeeHandler
      */
     public function handle(PromoteEmployee $command)
     {
-        $employee = $this->employeeRepository->find($command->getId());
+        $employee = $this->employeeRepository->get($command->getId());
 
         $employee->promote($command->getPosition(), $command->getSalaryScale());
 
