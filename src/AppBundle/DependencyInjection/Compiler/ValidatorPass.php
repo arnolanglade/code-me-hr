@@ -29,6 +29,8 @@ final class ValidatorPass implements CompilerPassInterface
             $validationFiles[] = $file->getPathname();
         }
 
+        sort($validationFiles);
+
         $container->getDefinition('validator.builder')->addMethodCall(
             'addYamlMappings',
             [$validationFiles]

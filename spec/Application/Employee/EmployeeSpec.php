@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Al\Application\Employee\DTO;
+namespace spec\Al\Application\Employee;
 
-use Al\Application\Employee\DTO\Employee;
+use Al\Application\Employee\Employee;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

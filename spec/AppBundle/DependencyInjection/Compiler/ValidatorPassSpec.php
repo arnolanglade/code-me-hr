@@ -28,8 +28,8 @@ class ValidatorPassSpec extends ObjectBehavior
 
         $validationFiles = [
             sprintf('%s/../Application/Employee/Resources/validation/FireEmployee.yml', $rootDirectory),
-            sprintf('%s/../Application/Employee/Resources/validation/PromoteEmployee.yml', $rootDirectory),
             sprintf('%s/../Application/Employee/Resources/validation/HireEmployee.yml', $rootDirectory),
+            sprintf('%s/../Application/Employee/Resources/validation/PromoteEmployee.yml', $rootDirectory),
         ];
 
         $container->getDefinition('validator.builder')->willReturn($validatorBuilder);

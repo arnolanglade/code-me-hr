@@ -2,7 +2,7 @@
 
 namespace spec\Al\Infrastructure\Employee\Finder;
 
-use Al\Application\Employee\DTO\Employee AS DTO;
+use Al\Application\Employee\Employee AS DTO;
 use Al\Component\Employee\Employee;
 use Al\Infrastructure\Employee\Finder\EmployeeFinder;
 use Doctrine\ORM\EntityManagerInterface;

@@ -16,7 +16,7 @@ use Al\Application\Employee\Command\FireEmployee;
 use Al\Application\Employee\Command\PromoteEmployee;
 use Al\AppBundle\Form\EmployeeType;
 use Al\Application\Employee\Command\HireEmployee;
-use Al\Application\Employee\DTO\Employee;
+use Al\Application\Employee\Employee;
 use Al\Infrastructure\Employee\Finder\Criteria\SearchCriteria;
 use Al\Infrastructure\Specification\NewX;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

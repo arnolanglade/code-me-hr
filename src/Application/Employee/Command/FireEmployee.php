@@ -26,10 +26,11 @@ final class FireEmployee implements NamedMessage
     public function __construct($id)
     {
         $this->id = $id;
+        $this->firedAt = new \DateTime('now');
     }
 
     /**
-     * @return string
+     * @return Uuid
      */
     public function getId(): Uuid
     {

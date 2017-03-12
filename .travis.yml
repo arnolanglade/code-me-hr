@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - 7.0
+  - 7.1
+
+before_script:
+  - wget http://getcomposer.org/composer.phar
+  - php composer.phar install --dev --prefer-dist
+  - cp app/config/parameters.yml app/config/parameters_test.yml
+
+  - bin/console doctrine:database:create --env=test > /dev/null
+  - bin/console doctrine:schema:create --env=test > /dev/null
+  - bin/console cache:warmup --env=test > /dev/null
+
+script:
+  - php vendor/bin/behat
+  - php vendor/bin/phpspec run -v
