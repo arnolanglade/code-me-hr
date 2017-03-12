@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace Al\Component\Employee;
 
-
 use Ramsey\Uuid\Uuid;
 
 interface EmployeeRepositoryInterface

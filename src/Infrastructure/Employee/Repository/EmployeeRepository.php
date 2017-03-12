@@ -28,7 +28,6 @@ final class EmployeeRepository implements EmployeeRepositoryInterface
      */
     public function __construct(EntityManager $entityManager)
     {
-
         $this->entityManager = $entityManager;
     }
 

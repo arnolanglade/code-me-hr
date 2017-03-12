@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace Al\Infrastructure\Employee\Finder;
 
-use Al\Application\Employee\DTO\Employee AS DTO;
+use Al\Application\Employee\DTO\Employee as DTO;
 use Al\Component\Employee\Employee;
 use Al\Infrastructure\Specification\NewX;
 use Doctrine\ORM\EntityManagerInterface;
