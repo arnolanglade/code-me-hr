@@ -14,20 +14,20 @@ namespace Al\Infrastructure\Employee\Repository;
 
 use Al\Component\Employee\Employee;
 use Al\Component\Employee\Exception\NotExistingEmployee;
-use Doctrine\ORM\EntityManager;
 use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
+use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;
 
 final class EmployeeRepository implements EmployeeRepositoryInterface
 {
-    /** @var EntityManager */
+    /** @var EntityManagerInterface */
     private $entityManager;
 
     /**
-     * @param EntityManager $entityManager
+     * @param EntityManagerInterface $entityManager
      */
-    public function __construct(EntityManager $entityManager)
+    public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
