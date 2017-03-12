@@ -10,26 +10,26 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Infrastructure\Employee\Criteria;
+namespace Al\Infrastructure\Employee\Finder\Criteria;
 
 use Happyr\DoctrineSpecification\BaseSpecification;
 use Happyr\DoctrineSpecification\Spec;
 use Happyr\DoctrineSpecification\Specification\Specification;
 
-final class NameCriteria extends BaseSpecification
+final class IsFiredCriteria extends BaseSpecification
 {
-    /** @var string */
-    private $name;
+    /** @var bool */
+    private $isFired = false;
 
     /**
-     * @param string      $position
+     * @param bool|null   $isFired
      * @param string|null $dqlAlias
      */
-    public function __construct(string $position = null, string $dqlAlias = null)
+    public function __construct(bool $isFired, string $dqlAlias = null)
     {
         parent::__construct($dqlAlias);
 
-        $this->name = $position;
+        $this->isFired = $isFired;
     }
 
     /**
@@ -37,10 +37,10 @@ final class NameCriteria extends BaseSpecification
      */
     protected function getSpec()
     {
-        if (null === $this->name) {
-            return null;
+        if (false === $this->isFired) {
+            return Spec::isNull('firedAt');
         }
 
-        return Spec::like('name', $this->name);
+        return Spec::isNotNull('firedAt');
     }
 }

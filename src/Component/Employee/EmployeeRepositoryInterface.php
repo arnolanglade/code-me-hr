@@ -12,7 +12,8 @@ declare(strict_types=1);
 
 namespace Al\Component\Employee;
 
-use Happyr\DoctrineSpecification\Specification\Specification;
+
+use Ramsey\Uuid\Uuid;
 
 interface EmployeeRepositoryInterface
 {
@@ -23,12 +24,7 @@ interface EmployeeRepositoryInterface
      *
      * @return EmployeeInterface|null
      */
-    public function find($identifier);
-
-    /**
-     * Search employees by criteria
-     */
-    public function match(Specification $specification);
+    public function find(Uuid $identifier);
 
     /**
      * Add an employee

@@ -14,6 +14,7 @@ namespace Al\Application\Employee\Handler;
 
 use Al\Application\Employee\Command\PromoteEmployee;
 use Al\Component\Employee\EmployeeRepositoryInterface;
+use Ramsey\Uuid\Uuid;
 
 final class PromoteEmployeeHandler
 {

@@ -16,7 +16,9 @@ use Al\Application\Employee\Command\FireEmployee;
 use Al\Application\Employee\Command\PromoteEmployee;
 use Al\AppBundle\Form\EmployeeType;
 use Al\Application\Employee\Command\HireEmployee;
-use Al\Infrastructure\Employee\Criteria\SearchCriteria;
+use Al\Application\Employee\DTO\Employee;
+use Al\Infrastructure\Employee\Finder\Criteria\SearchCriteria;
+use Al\Infrastructure\Specification\NewX;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,16 +32,19 @@ class EmployeeController extends Controller
     public function listAction(Request $request)
     {
         $searchCriteria = new SearchCriteria(
-            $request->get('name'),
-            $request->get('position'),
+            (string) $request->get('name'),
+            (string) $request->get('position'),
             (bool) $request->get('is_fired', false)
         );
 
-        $paginatedEmployees = $this->get('al.employee.repository')->match($searchCriteria);
-        $paginatedEmployees->setCurrentPage($request->get('page', 1));
+        $employees = $this->get('al.employee.finder')->findAll(
+            $searchCriteria,
+            (int) $request->get('page', 1),
+            (int) $request->get('limit', 10)
+        );
 
         return $this->render('employee/list.html.twig', [
-            'employees' => $paginatedEmployees
+            'employees' => $employees
         ]);
     }
 

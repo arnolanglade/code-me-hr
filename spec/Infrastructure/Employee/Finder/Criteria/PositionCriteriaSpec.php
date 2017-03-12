@@ -1,22 +1,22 @@
 <?php
 
-namespace spec\Al\Infrastructure\Employee\Criteria;
+namespace spec\Al\Infrastructure\Employee\Finder\Criteria;
 
-use Al\Infrastructure\Employee\Criteria\IsFiredCriteria;
+use Al\Infrastructure\Employee\Finder\Criteria\PositionCriteria;
 use Happyr\DoctrineSpecification\BaseSpecification;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class IsFiredCriteriaSpec extends ObjectBehavior
+class PositionCriteriaSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith(true);
+        $this->beConstructedWith('position');
     }
 
     function it_is_initializable()
     {
-        $this->shouldHaveType(IsFiredCriteria::class);
+        $this->shouldHaveType(PositionCriteria::class);
     }
 
     function it_is_a_specification()

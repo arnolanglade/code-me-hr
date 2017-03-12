@@ -1,22 +1,22 @@
 <?php
 
-namespace spec\Al\Infrastructure\Employee\Criteria;
+namespace spec\Al\Infrastructure\Employee\Finder\Criteria;
 
-use Al\Infrastructure\Employee\Criteria\SearchCriteria;
+use Al\Infrastructure\Employee\Finder\Criteria\NameCriteria;
 use Happyr\DoctrineSpecification\BaseSpecification;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class SearchCriteriaSpec extends ObjectBehavior
+class NameCriteriaSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith('name', 'position', true);
+        $this->beConstructedWith('name');
     }
 
     function it_is_initializable()
     {
-        $this->shouldHaveType(SearchCriteria::class);
+        $this->shouldHaveType(NameCriteria::class);
     }
 
     function it_is_a_specification()

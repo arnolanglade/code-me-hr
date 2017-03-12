@@ -8,6 +8,8 @@ use Al\Component\Employee\Employee;
 use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
 use PhpSpec\ObjectBehavior;
+use Prophecy\Argument;
+use Ramsey\Uuid\Uuid;
 
 class FireEmployeeHandlerSpec extends ObjectBehavior
 {
@@ -23,10 +25,10 @@ class FireEmployeeHandlerSpec extends ObjectBehavior
 
     function it_handles_a_fire_employee_command($employeeRepository, EmployeeInterface $employee) {
         $firedAt = new \DateTime();
-        $command = new FireEmployee('employee-id');
+        $command = new FireEmployee('03a368d5-85b2-46cf-a860-ab22101827d8');
         $command->setFiredAt($firedAt);
 
-        $employeeRepository->find('employee-id')->willReturn($employee);
+        $employeeRepository->find(Argument::type(Uuid::class))->willReturn($employee);
         $employee->fire($firedAt)->shouldBeCalled();
         $employeeRepository->add($employee)->shouldBeCalled();
 

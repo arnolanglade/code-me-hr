@@ -10,8 +10,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Infrastructure\Employee\Criteria;
+namespace Al\Infrastructure\Employee\Finder\Criteria;
 
+use Al\Infrastructure\Employee\Finder\Criteria\IsFiredCriteria;
+use Al\Infrastructure\Employee\Finder\Criteria\NameCriteria;
+use Al\Infrastructure\Employee\Finder\Criteria\PositionCriteria;
 use Happyr\DoctrineSpecification\BaseSpecification;
 use Happyr\DoctrineSpecification\Spec;
 use Happyr\DoctrineSpecification\Specification\Specification;

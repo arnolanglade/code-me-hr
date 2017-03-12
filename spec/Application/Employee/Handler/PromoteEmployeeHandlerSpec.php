@@ -9,6 +9,7 @@ use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Ramsey\Uuid\Uuid;
 
 class PromoteEmployeeHandlerSpec extends ObjectBehavior
 {
@@ -24,11 +25,11 @@ class PromoteEmployeeHandlerSpec extends ObjectBehavior
 
     function it_handles_a_fire_employee_command($employeeRepository, EmployeeInterface $employee)
     {
-        $command = new PromoteEmployee('employee-id');
+        $command = new PromoteEmployee('03a368d5-85b2-46cf-a860-ab22101827d8');
         $command->setPosition('position');
         $command->setSalaryScale(1);
 
-        $employeeRepository->find('employee-id')->willReturn($employee);
+        $employeeRepository->find(Argument::type(Uuid::class))->willReturn($employee);
         $employee->promote('position', 1)->shouldBeCalled();
         $employeeRepository->add($employee)->shouldBeCalled();
 

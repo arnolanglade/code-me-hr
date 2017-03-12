@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Al\Application\Employee\Command;
 
+use Ramsey\Uuid\Uuid;
 use SimpleBus\Message\Name\NamedMessage;
 
 final class PromoteEmployee implements NamedMessage
@@ -31,17 +32,17 @@ final class PromoteEmployee implements NamedMessage
     }
 
     /**
-     * @return string
+     * @return Uuid
      */
-    public function getId()
+    public function getId(): Uuid
     {
-        return $this->id;
+        return Uuid::fromString($this->id);
     }
 
     /**
      * @return string
      */
-    public function getPosition()
+    public function getPosition(): string
     {
         return (string) $this->position;
     }
@@ -57,7 +58,7 @@ final class PromoteEmployee implements NamedMessage
     /**
      * @return int
      */
-    public function getSalaryScale()
+    public function getSalaryScale(): int
     {
         return (int) $this->salaryScale;
     }
@@ -73,7 +74,7 @@ final class PromoteEmployee implements NamedMessage
     /**
      * {@inheritdoc}
      */
-    public static function messageName()
+    public static function messageName(): string
     {
         return 'promote_employee';
     }

@@ -34,27 +34,6 @@ class EmployeeRepositorySpec extends ObjectBehavior
         $this->shouldHaveType(EmployeeRepositoryInterface::class);
     }
 
-    function it_finds_employees_that_match_specification(
-        $entityManager,
-        Specification $specification,
-        QueryBuilder $queryBuilder
-    ) {
-        $specification->getFilter($queryBuilder, 'employee')->willReturn('employe.name = :name');
-        $specification->modify($queryBuilder, 'employee')->shouldBeCalled();
-
-        $entityManager->createQueryBuilder()->willReturn($queryBuilder);
-
-        $queryBuilder->getRootAliases()->willReturn(['employee']);
-
-        $queryBuilder->select('employee')->willReturn($queryBuilder);
-        $queryBuilder->from(Argument::any(), 'employee', null)->willReturn($queryBuilder);
-        $queryBuilder->andWhere('employe.name = :name')->shouldBeCalled();
-
-        $queryBuilder->getQuery()->shouldBeCalled();
-
-        $this->match($specification)->shouldHaveType(Pagerfanta::class);
-    }
-
     function it_adds_employee_to_repository($entityManager, EmployeeInterface $employee)
     {
         $entityManager->persist($employee)->shouldBeCalled();

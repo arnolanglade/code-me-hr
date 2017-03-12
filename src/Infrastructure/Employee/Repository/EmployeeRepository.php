@@ -12,37 +12,32 @@ declare(strict_types=1);
 
 namespace Al\Infrastructure\Employee\Repository;
 
+use Al\Component\Employee\Employee;
 use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\QueryBuilder;
 use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
-use Happyr\DoctrineSpecification\Filter\Filter;
-use Happyr\DoctrineSpecification\Query\QueryModifier;
-use Happyr\DoctrineSpecification\Specification\Specification;
-use Pagerfanta\Adapter\DoctrineORMAdapter;
-use Pagerfanta\Pagerfanta;
+use Ramsey\Uuid\Uuid;
 
-final class EmployeeRepository extends EntityRepository implements EmployeeRepositoryInterface
+final class EmployeeRepository implements EmployeeRepositoryInterface
 {
+    /** @var EntityManager */
+    private $entityManager;
+
     /**
      * @param EntityManager $entityManager
-     * @param string        $classname
      */
-    public function __construct(EntityManager $entityManager, $classname)
+    public function __construct(EntityManager $entityManager)
     {
-        parent::__construct($entityManager, $entityManager->getClassMetadata($classname));
+
+        $this->entityManager = $entityManager;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function match(Specification $specification)
+    public function find(Uuid $identifier)
     {
-        $queryBuilder = $this->createQueryBuilder('employee');
-        $this->applySpecification($queryBuilder, $specification);
-
-        return new Pagerfanta(new DoctrineORMAdapter($queryBuilder));
+        return $this->entityManager->find(Employee::class, $identifier);
     }
 
     /**
@@ -50,8 +45,8 @@ final class EmployeeRepository extends EntityRepository implements EmployeeRepos
      */
     public function add(EmployeeInterface $employee)
     {
-        $this->_em->persist($employee);
-        $this->_em->flush();
+        $this->entityManager->persist($employee);
+        $this->entityManager->flush();
     }
 
     /**
@@ -59,24 +54,7 @@ final class EmployeeRepository extends EntityRepository implements EmployeeRepos
      */
     public function remove(EmployeeInterface $employee)
     {
-        $this->_em->remove($employee);
-        $this->_em->flush();
-    }
-
-    /**
-     * @param QueryBuilder  $queryBuilder
-     * @param Specification $specification
-     */
-    public function applySpecification(QueryBuilder $queryBuilder, Specification $specification)
-    {
-        if ($specification instanceof QueryModifier) {
-            $specification->modify($queryBuilder, $queryBuilder->getRootAliases()[0]);
-        }
-
-        if ($specification instanceof Filter
-            && $filter = (string) $specification->getFilter($queryBuilder, $queryBuilder->getRootAliases()[0])
-        ) {
-            $queryBuilder->andWhere($filter);
-        }
+        $this->entityManager->remove($employee);
+        $this->entityManager->flush();
     }
 }

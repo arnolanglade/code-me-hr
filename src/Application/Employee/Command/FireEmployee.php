@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Al\Application\Employee\Command;
 
+use Ramsey\Uuid\Uuid;
 use SimpleBus\Message\Name\NamedMessage;
 
 final class FireEmployee implements NamedMessage
@@ -30,16 +31,16 @@ final class FireEmployee implements NamedMessage
     /**
      * @return string
      */
-    public function getId()
+    public function getId(): Uuid
     {
-        return $this->id;
+        return Uuid::fromString($this->id);
     }
 
 
     /**
      * @return \DateTime
      */
-    public function getFiredAt()
+    public function getFiredAt(): \DateTime
     {
         return $this->firedAt;
     }
@@ -55,7 +56,7 @@ final class FireEmployee implements NamedMessage
     /**
      * {@inheritdoc}
      */
-    public static function messageName()
+    public static function messageName(): string
     {
         return 'fire_employee';
     }

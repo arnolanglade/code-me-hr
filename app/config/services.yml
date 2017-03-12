@@ -1,13 +1,14 @@
-parameters:
-    al.employee.model: 'Al\Component\Employee\Employee'
-
 services:
     ### Repository
     al.employee.repository:
         class: 'Al\Infrastructure\Employee\Repository\EmployeeRepository'
         arguments:
             - '@doctrine.orm.entity_manager'
-            - '%al.employee.model%'
+
+    al.employee.finder:
+        class: 'Al\Infrastructure\Employee\Finder\EmployeeFinder'
+        arguments:
+            - '@doctrine.orm.entity_manager'
 
     ### Command handler
     al.employee.handler.hire:
