@@ -23,7 +23,7 @@ final class Employee implements EmployeeInterface, ContainsRecordedMessages
 {
     use PrivateMessageRecorderCapabilities;
 
-    /** @var string */
+    /** @var Uuid */
     private $id;
 
     /** @var string */
