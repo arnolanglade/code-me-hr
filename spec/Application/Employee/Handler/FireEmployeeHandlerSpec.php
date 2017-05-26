@@ -26,7 +26,7 @@ class FireEmployeeHandlerSpec extends ObjectBehavior
     function it_handles_a_fire_employee_command($employeeRepository, EmployeeInterface $employee) {
         $firedAt = new \DateTime();
         $command = new FireEmployee('03a368d5-85b2-46cf-a860-ab22101827d8');
-        $command->setFiredAt($firedAt);
+        $command->firedAt = $firedAt;
 
         $employeeRepository->get(Argument::type(Uuid::class))->willReturn($employee);
         $employee->fire($firedAt)->shouldBeCalled();

@@ -18,6 +18,7 @@ use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidInterface;
 
 final class EmployeeRepository implements EmployeeRepositoryInterface
 {
@@ -35,7 +36,7 @@ final class EmployeeRepository implements EmployeeRepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function get(Uuid $identifier)
+    public function get(UuidInterface $identifier): EmployeeInterface
     {
         if (null === $employee = $this->entityManager->find(Employee::class, (string) $identifier->toString())) {
             throw new NotExistingEmployee((string) $identifier->toString());
@@ -50,7 +51,7 @@ final class EmployeeRepository implements EmployeeRepositoryInterface
     public function add(EmployeeInterface $employee)
     {
         $this->entityManager->persist($employee);
-        $this->entityManager->flush();
+        $this->entityManager->flush($employee);
     }
 
     /**
@@ -59,6 +60,6 @@ final class EmployeeRepository implements EmployeeRepositoryInterface
     public function remove(EmployeeInterface $employee)
     {
         $this->entityManager->remove($employee);
-        $this->entityManager->flush();
+        $this->entityManager->flush($employee);
     }
 }

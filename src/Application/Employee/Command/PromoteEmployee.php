@@ -18,57 +18,17 @@ use SimpleBus\Message\Name\NamedMessage;
 final class PromoteEmployee implements NamedMessage
 {
     /** @var string */
-    private $id;
+    public $id;
 
     /** @var string */
-    private $position = '';
+    public $position = '';
 
     /** @var int */
-    private $salaryScale = 0;
+    public $salaryScale = 0;
 
     public function __construct(string $id)
     {
-        $this->id = $id;
-    }
-
-    /**
-     * @return Uuid
-     */
-    public function getId(): Uuid
-    {
-        return Uuid::fromString($this->id);
-    }
-
-    /**
-     * @return string
-     */
-    public function getPosition(): string
-    {
-        return (string) $this->position;
-    }
-
-    /**
-     * @param string $position
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSalaryScale(): int
-    {
-        return (int) $this->salaryScale;
-    }
-
-    /**
-     * @param int $withSalaryScale
-     */
-    public function setSalaryScale($withSalaryScale)
-    {
-        $this->salaryScale = $withSalaryScale;
+        $this->id = Uuid::fromString($id);
     }
 
     /**

@@ -26,8 +26,8 @@ class PromoteEmployeeHandlerSpec extends ObjectBehavior
     function it_handles_a_fire_employee_command($employeeRepository, EmployeeInterface $employee)
     {
         $command = new PromoteEmployee('03a368d5-85b2-46cf-a860-ab22101827d8');
-        $command->setPosition('position');
-        $command->setSalaryScale(1);
+        $command->position = 'position';
+        $command->salaryScale = 1;
 
         $employeeRepository->get(Argument::type(Uuid::class))->willReturn($employee);
         $employee->promote('position', 1)->shouldBeCalled();

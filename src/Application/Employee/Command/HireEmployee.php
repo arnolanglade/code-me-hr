@@ -17,60 +17,20 @@ use SimpleBus\Message\Name\NamedMessage;
 final class HireEmployee implements NamedMessage
 {
     /** @var string */
-    private $name = '';
+    public $name = '';
 
     /** @var string */
-    private $position = '';
+    public $position = '';
 
     /** @var int */
-    private $salaryScale = 0;
+    public $salaryScale = 0;
 
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return (string) $this->name;
-    }
+    /** @var \DateTimeInterface */
+    public $hiredAt;
 
-    /**
-     * @param string $name
-     */
-    public function setName($name)
+    public function __construct()
     {
-        $this->name = $name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPosition(): string
-    {
-        return (string) $this->position;
-    }
-
-    /**
-     * @param string $position
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSalaryScale(): int
-    {
-        return (int) $this->salaryScale;
-    }
-
-    /**
-     * @param int $withSalaryScale
-     */
-    public function setSalaryScale($withSalaryScale)
-    {
-        $this->salaryScale = $withSalaryScale;
+        $this->hiredAt = new \DateTime('now');
     }
 
     /**

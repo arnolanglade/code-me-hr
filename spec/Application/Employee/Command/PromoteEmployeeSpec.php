@@ -11,7 +11,7 @@ class PromoteEmployeeSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith('id');
+        $this->beConstructedWith('03a368d5-85b2-46cf-a860-ab22101827d8');
     }
 
     function it_is_initializable()

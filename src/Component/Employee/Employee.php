@@ -16,6 +16,7 @@ use Al\Component\Employee\Event\EmployeeFired;
 use Al\Component\Employee\Event\EmployeeHired;
 use Al\Component\Employee\Event\EmployeePromoted;
 use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidInterface;
 use SimpleBus\Message\Recorder\ContainsRecordedMessages;
 use SimpleBus\Message\Recorder\PrivateMessageRecorderCapabilities;
 
@@ -38,12 +39,18 @@ final class Employee implements EmployeeInterface, ContainsRecordedMessages
     /** @var \DateTimeInterface */
     private $firedAt;
 
-    private function __construct(string $name, string $position, int $salaryScale)
-    {
-        $this->id = Uuid::uuid4();
+    private function __construct(
+        UuidInterface $identifier,
+        string $name,
+        string $forPosition,
+        int $withSalaryScale,
+        \DateTimeInterface $hiredAt
+    ) {
+        $this->id = $identifier;
         $this->name = $name;
-        $this->position = $position;
-        $this->salaryScale = $salaryScale;
+        $this->position = $forPosition;
+        $this->salaryScale = $withSalaryScale;
+        $this->hiredAt = $hiredAt;
         $this->firedAt = null;
 
         $this->record(new EmployeeHired((string)$this->id, $this->name, $this->position));
@@ -52,9 +59,14 @@ final class Employee implements EmployeeInterface, ContainsRecordedMessages
     /**
      * {@inheritdoc}
      */
-    public static function hire(string $name, string $forPosition, int $withSalaryScale)
-    {
-        return new self($name, $forPosition, $withSalaryScale);
+    public static function hire(
+        UuidInterface $identifier,
+        string $name,
+        string $forPosition,
+        int $withSalaryScale,
+        \DateTimeInterface $hiredAt
+    ) {
+        return new self($identifier, $name, $forPosition, $withSalaryScale, $hiredAt);
     }
 
     /**
@@ -76,37 +88,5 @@ final class Employee implements EmployeeInterface, ContainsRecordedMessages
         $this->firedAt = $firedAt;
 
         $this->record(new EmployeeFired((string)$this->id, $this->name, $this->position));
-    }
-
-    /**
-     * @return string
-     */
-    public function getId(): string
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPosition(): string
-    {
-        return $this->position;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSalaryScale(): int
-    {
-        return $this->salaryScale;
     }
 }

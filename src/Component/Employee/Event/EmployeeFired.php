@@ -59,7 +59,7 @@ final class EmployeeFired implements NamedMessage
     /**
      * {@inheritdoc}
      */
-    public static function messageName()
+    public static function messageName(): string
     {
         return 'employee_fired';
     }

@@ -33,9 +33,9 @@ final class PromoteEmployeeHandler
      */
     public function handle(PromoteEmployee $command)
     {
-        $employee = $this->employeeRepository->get($command->getId());
+        $employee = $this->employeeRepository->get($command->id);
 
-        $employee->promote($command->getPosition(), $command->getSalaryScale());
+        $employee->promote($command->position, (int)$command->salaryScale);
 
         $this->employeeRepository->add($employee);
     }

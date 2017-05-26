@@ -24,9 +24,9 @@ class HireEmployeeHandlerSpec extends ObjectBehavior
     function it_handles_a_fire_employee_command($employeeRepository)
     {
         $command = new HireEmployee();
-        $command->setName('name');
-        $command->setPosition('position');
-        $command->setSalaryScale(1);
+        $command->name ='name';
+        $command->position = 'position';
+        $command->salaryScale = 1;
 
         $employeeRepository->add(Argument::type(Employee::class))->shouldBeCalled();
 

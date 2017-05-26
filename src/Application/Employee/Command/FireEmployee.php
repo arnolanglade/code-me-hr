@@ -17,41 +17,16 @@ use SimpleBus\Message\Name\NamedMessage;
 
 final class FireEmployee implements NamedMessage
 {
-    /** @var string */
-    private $id;
+    /** @var Uuid */
+    public $id;
 
     /** @var \DateTime */
-    private $firedAt;
+    public $firedAt;
 
-    public function __construct($id)
+    public function __construct(string $id)
     {
-        $this->id = $id;
+        $this->id = Uuid::fromString($id);
         $this->firedAt = new \DateTime('now');
-    }
-
-    /**
-     * @return Uuid
-     */
-    public function getId(): Uuid
-    {
-        return Uuid::fromString($this->id);
-    }
-
-
-    /**
-     * @return \DateTime
-     */
-    public function getFiredAt(): \DateTime
-    {
-        return $this->firedAt;
-    }
-
-    /**
-     * @param \DateTime $fireAt
-     */
-    public function setFiredAt($fireAt)
-    {
-        $this->firedAt = $fireAt;
     }
 
     /**

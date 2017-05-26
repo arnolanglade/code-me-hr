@@ -15,6 +15,7 @@ namespace Al\Application\Employee\Handler;
 use Al\Application\Employee\Command\HireEmployee;
 use Al\Component\Employee\Employee;
 use Al\Component\Employee\EmployeeRepositoryInterface;
+use Ramsey\Uuid\Uuid;
 
 final class HireEmployeeHandler
 {
@@ -35,9 +36,11 @@ final class HireEmployeeHandler
     public function handle(HireEmployee $command)
     {
         $employee = Employee::hire(
-            $command->getName(),
-            $command->getPosition(),
-            $command->getSalaryScale()
+            Uuid::uuid4(),
+            $command->name,
+            $command->position,
+            (int) $command->salaryScale,
+            $command->hiredAt
         );
 
         $this->employeeRepository->add($employee);

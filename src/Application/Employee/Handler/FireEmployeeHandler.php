@@ -33,9 +33,9 @@ final class FireEmployeeHandler
      */
     public function handle(FireEmployee $command)
     {
-        $employee = $this->employeeRepository->get($command->getId());
+        $employee = $this->employeeRepository->get($command->id);
 
-        $employee->fire($command->getFiredAt());
+        $employee->fire($command->firedAt);
 
         $this->employeeRepository->add($employee);
     }

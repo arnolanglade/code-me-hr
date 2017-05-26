@@ -12,16 +12,26 @@ declare(strict_types=1);
 
 namespace Al\Component\Employee;
 
+use Ramsey\Uuid\UuidInterface;
+
 interface EmployeeInterface
 {
     /**
      * Hire an employee
      *
-     * @param string $name
-     * @param string $forPosition
-     * @param int    $withSalaryScale
+     * @param UuidInterface      $identifier
+     * @param string             $name
+     * @param string             $forPosition
+     * @param int                $withSalaryScale
+     * @param \DateTimeInterface $hiredAt
      */
-    public static function hire(string $name, string $forPosition, int $withSalaryScale);
+    public static function hire(
+        UuidInterface $identifier,
+        string $name,
+        string $forPosition,
+        int $withSalaryScale,
+        \DateTimeInterface $hiredAt
+    );
 
     /**
      * Promote him to new position

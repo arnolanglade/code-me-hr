@@ -48,7 +48,7 @@ class EmployeeRepositorySpec extends ObjectBehavior
     function it_adds_employee_to_repository($entityManager, EmployeeInterface $employee)
     {
         $entityManager->persist($employee)->shouldBeCalled();
-        $entityManager->flush()->shouldBeCalled();
+        $entityManager->flush($employee)->shouldBeCalled();
 
         $this->add($employee)->shouldReturn(null);
     }
@@ -56,7 +56,7 @@ class EmployeeRepositorySpec extends ObjectBehavior
     function it_removes_employee_to_repository($entityManager, EmployeeInterface $employee)
     {
         $entityManager->remove($employee)->shouldBeCalled();
-        $entityManager->flush()->shouldBeCalled();
+        $entityManager->flush($employee)->shouldBeCalled();
 
         $this->remove($employee)->shouldReturn(null);
     }

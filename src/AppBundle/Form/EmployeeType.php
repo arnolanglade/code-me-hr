@@ -21,7 +21,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 
-class EmployeeType extends AbstractType
+final class EmployeeType extends AbstractType
 {
     /**
      * {@inheritdoc}
