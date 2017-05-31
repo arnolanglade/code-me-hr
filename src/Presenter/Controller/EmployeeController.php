@@ -10,11 +10,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\AppBundle\Controller;
+namespace Al\Presenter\Controller;
 
 use Al\Application\Employee\Command\FireEmployee;
 use Al\Application\Employee\Command\PromoteEmployee;
-use Al\AppBundle\Form\EmployeeType;
+use Al\Presenter\Form\EmployeeType;
 use Al\Application\Employee\Command\HireEmployee;
 use Al\Application\Employee\Employee;
 use Al\Infrastructure\Employee\Finder\Criteria\SearchCriteria;

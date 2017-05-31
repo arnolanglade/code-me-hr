@@ -10,9 +10,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\AppBundle;
+namespace Al\Presenter;
 
-use Al\AppBundle\DependencyInjection\Compiler\ValidatorPass;
+use Al\Presenter\DependencyInjection\Compiler\ValidatorPass;
 use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;

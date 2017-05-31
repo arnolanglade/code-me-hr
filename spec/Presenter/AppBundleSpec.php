@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Al\AppBundle;
+namespace spec\Al\Presenter;
 
-use Al\AppBundle\AppBundle;
-use Al\AppBundle\DependencyInjection\Compiler\ValidatorPass;
+use Al\Presenter\AppBundle;
+use Al\Presenter\DependencyInjection\Compiler\ValidatorPass;
 use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;

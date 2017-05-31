@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Al\AppBundle\DependencyInjection\Compiler;
+namespace spec\Al\Presenter\DependencyInjection\Compiler;
 
-use Al\AppBundle\AppBundle;
-use Al\AppBundle\DependencyInjection\Compiler\ValidatorPass;
+use Al\Presenter\AppBundle;
+use Al\Presenter\DependencyInjection\Compiler\ValidatorPass;
 use Symfony\Component\DependencyInjection\Definition;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

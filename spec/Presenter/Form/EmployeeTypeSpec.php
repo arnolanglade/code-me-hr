@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Al\AppBundle\Form;
+namespace spec\Al\Presenter\Form;
 
-use Al\AppBundle\Form\EmployeeType;
+use Al\Presenter\Form\EmployeeType;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\Form\AbstractType;

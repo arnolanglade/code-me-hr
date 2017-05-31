@@ -10,9 +10,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\AppBundle\DependencyInjection\Compiler;
+namespace Al\Presenter\DependencyInjection\Compiler;
 
-use Al\AppBundle\AppBundle;
+use Al\Presenter\AppBundle;
 use PhpCsFixer\Finder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
