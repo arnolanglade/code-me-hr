@@ -10,9 +10,8 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Presenter\DependencyInjection\Compiler;
+namespace Al\Infrastructure\Framework;
 
-use Al\Presenter\AppBundle;
 use PhpCsFixer\Finder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -46,7 +45,7 @@ final class ValidatorPass implements CompilerPassInterface
     {
         $bundleClass = new \ReflectionClass(AppBundle::class);
         $rootDirectory = sprintf(
-            '%s/../Application/Resources/validation',
+            '%s/../../Application/Resources/validation',
             dirname($bundleClass->getFileName())
         );
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace spec\Al\Presenter\DependencyInjection\Compiler;
+namespace spec\Al\Infrastructure\Framework;
 
-use Al\Presenter\AppBundle;
-use Al\Presenter\DependencyInjection\Compiler\ValidatorPass;
-use Symfony\Component\DependencyInjection\Definition;
+use Al\Infrastructure\Framework\AppBundle;
+use Al\Infrastructure\Framework\ValidatorPass;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
 
 class ValidatorPassSpec extends ObjectBehavior
 {
@@ -30,9 +30,9 @@ class ValidatorPassSpec extends ObjectBehavior
         $rootDirectory = dirname($bundleClass->getFileName());
 
         $validationFiles = [
-            sprintf('%s/../Application/Resources/validation/FireEmployee.yml', $rootDirectory),
-            sprintf('%s/../Application/Resources/validation/HireEmployee.yml', $rootDirectory),
-            sprintf('%s/../Application/Resources/validation/PromoteEmployee.yml', $rootDirectory),
+            sprintf('%s/../../Application/Resources/validation/FireEmployee.yml', $rootDirectory),
+            sprintf('%s/../../Application/Resources/validation/HireEmployee.yml', $rootDirectory),
+            sprintf('%s/../../Application/Resources/validation/PromoteEmployee.yml', $rootDirectory),
         ];
 
         $container->getDefinition('validator.builder')->willReturn($validatorBuilder);

@@ -10,13 +10,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Presenter\Controller;
+namespace Al\Infrastructure\UserInterface\Web;
 
 use Al\Application\Command\FireEmployee;
 use Al\Application\Command\HireEmployee;
 use Al\Application\Command\PromoteEmployee;
-use Al\Infrastructure\Employee\Finder\Criteria\SearchCriteria;
-use Al\Presenter\Form\EmployeeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 

@@ -10,7 +10,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Presenter\Form;
+namespace Al\Infrastructure\UserInterface\Web;
 
 use Al\Application\Command\FireEmployee;
 use Al\Application\Command\HireEmployee;
