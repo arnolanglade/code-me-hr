@@ -12,9 +12,9 @@ declare(strict_types=1);
 
 namespace Al\Presenter\Form;
 
-use Al\Application\Employee\Command\FireEmployee;
-use Al\Application\Employee\Command\HireEmployee;
-use Al\Application\Employee\Command\PromoteEmployee;
+use Al\Application\Command\FireEmployee;
+use Al\Application\Command\HireEmployee;
+use Al\Application\Command\PromoteEmployee;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;

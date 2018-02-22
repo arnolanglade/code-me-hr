@@ -1,10 +1,9 @@
 <?php
 
-namespace spec\Al\Application\Employee;
+namespace spec\Al\Component\ReadModel;
 
-use Al\Application\Employee\Employee;
+use Al\Component\ReadModel\Employee;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class EmployeeSpec extends ObjectBehavior
 {

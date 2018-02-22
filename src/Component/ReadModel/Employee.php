@@ -10,7 +10,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Application\Employee;
+namespace Al\Component\ReadModel;
 
 final class Employee
 {

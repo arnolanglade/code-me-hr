@@ -5,7 +5,7 @@ declare(strict_types=1);
  * This file is part of the AL labs package
  *
  * (c) Arnaud Langlade
- *
+ * fsfgsd
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
@@ -39,12 +39,14 @@ final class ValidatorPass implements CompilerPassInterface
 
     /**
      * @return string
+     *
+     * @throws \ReflectionException
      */
     private function getRootDirectory(): string
     {
         $bundleClass = new \ReflectionClass(AppBundle::class);
         $rootDirectory = sprintf(
-            '%s/../Application/Employee/Resources/validation',
+            '%s/../Application/Resources/validation',
             dirname($bundleClass->getFileName())
         );
 

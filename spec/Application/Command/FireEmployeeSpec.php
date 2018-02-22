@@ -1,13 +1,12 @@
 <?php
 
-namespace spec\Al\Application\Employee\Command;
+namespace spec\Al\Application\Command;
 
-use Al\Application\Employee\Command\PromoteEmployee;
+use Al\Application\Command\FireEmployee;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use SimpleBus\Message\Name\NamedMessage;
 
-class PromoteEmployeeSpec extends ObjectBehavior
+class FireEmployeeSpec extends ObjectBehavior
 {
     function let()
     {
@@ -16,7 +15,7 @@ class PromoteEmployeeSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType(PromoteEmployee::class);
+        $this->shouldHaveType(FireEmployee::class);
     }
 
     function it_is_a_named_message()
@@ -26,6 +25,6 @@ class PromoteEmployeeSpec extends ObjectBehavior
 
     function it_has_a_name()
     {
-        $this::messageName()->shouldReturn('promote_employee');
+        $this::messageName()->shouldReturn('fire_employee');
     }
 }

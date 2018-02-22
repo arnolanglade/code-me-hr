@@ -1,10 +1,9 @@
 <?php
 
-namespace spec\Al\Application\Employee\Handler;
+namespace spec\Al\Application\Handler;
 
-use Al\Application\Employee\Handler\PromoteEmployeeHandler;
-use Al\Application\Employee\Command\PromoteEmployee;
-use Al\Component\Employee\Employee;
+use Al\Application\Command\PromoteEmployee;
+use Al\Application\Handler\PromoteEmployeeHandler;
 use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
 use PhpSpec\ObjectBehavior;

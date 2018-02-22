@@ -10,7 +10,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Application\Employee\EventListener;
+namespace Al\Infrastructure\Framework;
 
 use Al\Component\Employee\Event\EmployeeFired;
 use Al\Component\Employee\Event\EmployeeHired;

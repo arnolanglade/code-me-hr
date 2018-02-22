@@ -1,10 +1,9 @@
 <?php
 
-namespace spec\Al\Application\Employee\Command;
+namespace spec\Al\Application\Command;
 
-use Al\Application\Employee\Command\HireEmployee;
+use Al\Application\Command\HireEmployee;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use SimpleBus\Message\Name\NamedMessage;
 
 class HireEmployeeSpec extends ObjectBehavior

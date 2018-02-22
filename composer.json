@@ -30,7 +30,8 @@
         "happyr/doctrine-specification": "^0.7.1",
         "white-october/pagerfanta-bundle": "^1.0",
         "simple-bus/symfony-bridge": "^4.1",
-        "simple-bus/doctrine-orm-bridge": "^4.0"
+        "simple-bus/doctrine-orm-bridge": "^4.0",
+        "memio/spec-gen": "^0.7.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.1",

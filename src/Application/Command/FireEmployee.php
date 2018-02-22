@@ -10,25 +10,23 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Application\Employee\Command;
+namespace Al\Application\Command;
 
 use Ramsey\Uuid\Uuid;
 use SimpleBus\Message\Name\NamedMessage;
 
-final class PromoteEmployee implements NamedMessage
+final class FireEmployee implements NamedMessage
 {
-    /** @var string */
+    /** @var Uuid */
     public $id;
 
-    /** @var string */
-    public $position = '';
-
-    /** @var int */
-    public $salaryScale = 0;
+    /** @var \DateTime */
+    public $firedAt;
 
     public function __construct(string $id)
     {
         $this->id = Uuid::fromString($id);
+        $this->firedAt = new \DateTime('now');
     }
 
     /**
@@ -36,6 +34,6 @@ final class PromoteEmployee implements NamedMessage
      */
     public static function messageName(): string
     {
-        return 'promote_employee';
+        return 'fire_employee';
     }
 }

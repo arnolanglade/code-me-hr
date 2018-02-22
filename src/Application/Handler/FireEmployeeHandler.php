@@ -10,14 +10,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Application\Employee\Handler;
+namespace Al\Application\Handler;
 
-use Al\Application\Employee\Command\HireEmployee;
-use Al\Component\Employee\Employee;
+use Al\Application\Command\FireEmployee;
 use Al\Component\Employee\EmployeeRepositoryInterface;
-use Ramsey\Uuid\Uuid;
 
-final class HireEmployeeHandler
+final class FireEmployeeHandler
 {
     /** @var EmployeeRepositoryInterface */
     private $employeeRepository;
@@ -31,17 +29,13 @@ final class HireEmployeeHandler
     }
 
     /**
-     * @param HireEmployee $command
+     * @param \Al\Application\Command\FireEmployee $command
      */
-    public function handle(HireEmployee $command)
+    public function handle(FireEmployee $command)
     {
-        $employee = Employee::hire(
-            Uuid::uuid4(),
-            $command->name,
-            $command->position,
-            (int) $command->salaryScale,
-            $command->hiredAt
-        );
+        $employee = $this->employeeRepository->get($command->id);
+
+        $employee->fire($command->firedAt);
 
         $this->employeeRepository->add($employee);
     }

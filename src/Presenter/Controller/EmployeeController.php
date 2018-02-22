@@ -12,16 +12,13 @@ declare(strict_types=1);
 
 namespace Al\Presenter\Controller;
 
-use Al\Application\Employee\Command\FireEmployee;
-use Al\Application\Employee\Command\PromoteEmployee;
-use Al\Presenter\Form\EmployeeType;
-use Al\Application\Employee\Command\HireEmployee;
-use Al\Application\Employee\Employee;
+use Al\Application\Command\FireEmployee;
+use Al\Application\Command\HireEmployee;
+use Al\Application\Command\PromoteEmployee;
 use Al\Infrastructure\Employee\Finder\Criteria\SearchCriteria;
-use Al\Infrastructure\Specification\NewX;
+use Al\Presenter\Form\EmployeeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
 
 class EmployeeController extends Controller
 {

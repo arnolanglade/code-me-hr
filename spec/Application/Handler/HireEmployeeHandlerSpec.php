@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Al\Application\Employee\Handler;
+namespace spec\Al\Application\Handler;
 
-use Al\Application\Employee\Handler\HireEmployeeHandler;
-use Al\Application\Employee\Command\HireEmployee;
+use Al\Application\Command\HireEmployee;
+use Al\Application\Handler\HireEmployeeHandler;
 use Al\Component\Employee\Employee;
 use Al\Component\Employee\EmployeeRepositoryInterface;
 use PhpSpec\ObjectBehavior;

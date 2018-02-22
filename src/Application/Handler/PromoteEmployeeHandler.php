@@ -10,12 +10,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Application\Employee\Handler;
+namespace Al\Application\Handler;
 
-use Al\Application\Employee\Command\FireEmployee;
+use Al\Application\Command\PromoteEmployee;
 use Al\Component\Employee\EmployeeRepositoryInterface;
 
-final class FireEmployeeHandler
+final class PromoteEmployeeHandler
 {
     /** @var EmployeeRepositoryInterface */
     private $employeeRepository;
@@ -29,13 +29,13 @@ final class FireEmployeeHandler
     }
 
     /**
-     * @param \Al\Application\Employee\Command\FireEmployee $command
+     * @param PromoteEmployee $command
      */
-    public function handle(FireEmployee $command)
+    public function handle(PromoteEmployee $command)
     {
         $employee = $this->employeeRepository->get($command->id);
 
-        $employee->fire($command->firedAt);
+        $employee->promote($command->position, (int)$command->salaryScale);
 
         $this->employeeRepository->add($employee);
     }

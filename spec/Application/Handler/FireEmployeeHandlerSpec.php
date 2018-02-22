@@ -1,10 +1,9 @@
 <?php
 
-namespace spec\Al\Application\Employee\Handler;
+namespace spec\Al\Application\Handler;
 
-use Al\Application\Employee\Command\FireEmployee;
-use Al\Application\Employee\Handler\FireEmployeeHandler;
-use Al\Component\Employee\Employee;
+use Al\Application\Command\FireEmployee;
+use Al\Application\Handler\FireEmployeeHandler;
 use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
 use PhpSpec\ObjectBehavior;

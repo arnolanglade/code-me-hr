@@ -2,7 +2,7 @@
 
 namespace spec\Al\Infrastructure\Employee\Finder;
 
-use Al\Application\Employee\Employee AS DTO;
+use Al\Application\Employee as DTO;
 use Al\Component\Employee\Employee;
 use Al\Infrastructure\Employee\Finder\EmployeeFinder;
 use Doctrine\ORM\EntityManagerInterface;
@@ -10,7 +10,6 @@ use Doctrine\ORM\QueryBuilder;
 use Happyr\DoctrineSpecification\Specification\Specification;
 use Pagerfanta\Pagerfanta;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class EmployeeFinderSpec extends ObjectBehavior
 {

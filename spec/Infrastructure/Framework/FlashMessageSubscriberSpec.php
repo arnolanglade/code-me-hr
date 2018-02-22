@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Al\Application\Employee\EventListener;
+namespace spec\Al\Infrastructure\Framework;
 
-use Al\Application\Employee\EventListener\FlashMessageSubscriber;
 use Al\Component\Employee\Event\EmployeeFired;
 use Al\Component\Employee\Event\EmployeeHired;
 use Al\Component\Employee\Event\EmployeePromoted;
+use Al\Infrastructure\Framework\FlashMessageSubscriber;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
