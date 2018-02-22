@@ -1,11 +1,10 @@
 <?php
 
-namespace spec\Al\Infrastructure\Fixtures;
+namespace spec\Al\Infrastructure\Persistence\Doctrine;
 
-use Al\Infrastructure\Fixtures\FileLocator;
+use Al\Infrastructure\Persistence\Doctrine\FileLocator;
 use Hautelook\AliceBundle\FixtureLocatorInterface;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class FileLocatorSpec extends ObjectBehavior
 {
@@ -19,9 +18,12 @@ class FileLocatorSpec extends ObjectBehavior
         $this->shouldImplement(FixtureLocatorInterface::class);
     }
 
+    /**
+     * @error this test should not depend on the file system
+     */
     function it_locates_the_fixtures_files()
     {
-        $path = __DIR__.'/../../../src/Infrastructure/Employee/Resources/fixtures/employee.yml';
+        $path = __DIR__.'/../../../../src/Infrastructure/Persistence/Doctrine/Resources/fixtures/employee.yml';
 
         $this->locateFiles([], '')->shouldReturn([realpath($path)]);
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Al\Infrastructure\Employee\Repository;
+namespace spec\Al\Infrastructure\Persistence\Doctrine;
 
 use Al\Component\Employee\Employee;
 use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
-use Al\Infrastructure\Employee\Repository\EmployeeRepository;
+use Al\Infrastructure\Persistence\Doctrine\EmployeeRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use PhpSpec\ObjectBehavior;

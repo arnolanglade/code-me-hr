@@ -10,14 +10,13 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Infrastructure\Employee\Repository;
+namespace Al\Infrastructure\Persistence\Doctrine;
 
 use Al\Component\Employee\Employee;
-use Al\Component\Employee\Exception\NotExistingEmployee;
 use Al\Component\Employee\EmployeeInterface;
 use Al\Component\Employee\EmployeeRepositoryInterface;
+use Al\Component\Employee\Exception\NotExistingEmployee;
 use Doctrine\ORM\EntityManagerInterface;
-use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 final class EmployeeRepository implements EmployeeRepositoryInterface
