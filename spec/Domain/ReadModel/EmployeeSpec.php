@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Al\Component\ReadModel;
+namespace spec\Al\Domain\ReadModel;
 
-use Al\Component\ReadModel\Employee;
+use Al\Domain\ReadModel\Employee;
 use PhpSpec\ObjectBehavior;
 
 class EmployeeSpec extends ObjectBehavior

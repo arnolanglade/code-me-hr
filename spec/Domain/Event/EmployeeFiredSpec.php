@@ -1,13 +1,12 @@
 <?php
 
-namespace spec\Al\Component\Employee\Event;
+namespace spec\Al\Domain\Event;
 
-use Al\Component\Employee\Event\EmployeeHired;
+use Al\Domain\Event\EmployeeFired;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use SimpleBus\Message\Name\NamedMessage;
 
-class EmployeeHiredSpec extends ObjectBehavior
+class EmployeeFiredSpec extends ObjectBehavior
 {
     function let()
     {
@@ -16,7 +15,7 @@ class EmployeeHiredSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType(EmployeeHired::class);
+        $this->shouldHaveType(EmployeeFired::class);
     }
 
     function it_is_a_named_message()
@@ -26,7 +25,7 @@ class EmployeeHiredSpec extends ObjectBehavior
 
     function it_has_a_name()
     {
-        $this::messageName()->shouldReturn('employee_hired');
+        $this::messageName()->shouldReturn('employee_fired');
     }
 
     function it_has_a_employee_id()

@@ -10,10 +10,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Component\Employee;
+namespace Al\Domain;
 
-use Al\Component\Employee\Exception\NotExistingEmployee;
-use Ramsey\Uuid\Uuid;
+use Al\Domain\Exception\NotExistingEmployee;
 use Ramsey\Uuid\UuidInterface;
 
 interface EmployeeRepositoryInterface

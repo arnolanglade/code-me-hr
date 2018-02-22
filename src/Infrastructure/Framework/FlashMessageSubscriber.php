@@ -12,9 +12,9 @@ declare(strict_types=1);
 
 namespace Al\Infrastructure\Framework;
 
-use Al\Component\Employee\Event\EmployeeFired;
-use Al\Component\Employee\Event\EmployeeHired;
-use Al\Component\Employee\Event\EmployeePromoted;
+use Al\Domain\Event\EmployeeFired;
+use Al\Domain\Event\EmployeeHired;
+use Al\Domain\Event\EmployeePromoted;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 final class FlashMessageSubscriber

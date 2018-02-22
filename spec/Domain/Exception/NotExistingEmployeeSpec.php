@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Al\Component\Employee\Exception;
+namespace spec\Al\Domain\Exception;
 
-use Al\Component\Employee\Exception\NotExistingEmployee;
+use Al\Domain\Exception\NotExistingEmployee;
 use PhpSpec\ObjectBehavior;
 
 class NotExistingEmployeeSpec extends ObjectBehavior

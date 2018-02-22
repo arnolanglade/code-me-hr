@@ -4,8 +4,8 @@ namespace spec\Al\Application\Handler;
 
 use Al\Application\Command\HireEmployee;
 use Al\Application\Handler\HireEmployeeHandler;
-use Al\Component\Employee\Employee;
-use Al\Component\Employee\EmployeeRepositoryInterface;
+use Al\Domain\Employee;
+use Al\Domain\EmployeeRepositoryInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

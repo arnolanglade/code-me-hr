@@ -10,11 +10,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Component\Employee\Event;
+namespace Al\Domain\ReadModel;
 
-use SimpleBus\Message\Name\NamedMessage;
-
-final class EmployeePromoted implements NamedMessage
+final class Employee
 {
     /** @var string */
     private $id;
@@ -25,17 +23,25 @@ final class EmployeePromoted implements NamedMessage
     /** @var string */
     private $position;
 
-    public function __construct(string $id, string $name, string $position)
+    /** @var int */
+    private $salaryScale;
+
+    /** @var string */
+    private $firedAt;
+
+    public function __construct(string $id, string $name, string $position, int $salaryScale, string $firedAt = null)
     {
         $this->id = $id;
         $this->name = $name;
         $this->position = $position;
+        $this->salaryScale = $salaryScale;
+        $this->firedAt = $firedAt;
     }
 
     /**
      * @return string
      */
-    public function getEmployeeId(): string
+    public function getId(): string
     {
         return $this->id;
     }
@@ -43,7 +49,7 @@ final class EmployeePromoted implements NamedMessage
     /**
      * @return string
      */
-    public function getEmployeeName(): string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -51,16 +57,24 @@ final class EmployeePromoted implements NamedMessage
     /**
      * @return string
      */
-    public function getEmployeePosition(): string
+    public function getPosition(): string
     {
         return $this->position;
     }
 
     /**
-     * {@inheritdoc}
+     * @return int
      */
-    public static function messageName(): string
+    public function getSalaryScale(): int
     {
-        return 'employee_promoted';
+        return $this->salaryScale;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFiredAt(): string
+    {
+        return $this->firedAt;
     }
 }

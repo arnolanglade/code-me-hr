@@ -10,11 +10,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Component\Employee;
+namespace Al\Domain;
 
-use Al\Component\Employee\Event\EmployeeFired;
-use Al\Component\Employee\Event\EmployeeHired;
-use Al\Component\Employee\Event\EmployeePromoted;
+use Al\Domain\Event\EmployeeFired;
+use Al\Domain\Event\EmployeeHired;
+use Al\Domain\Event\EmployeePromoted;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use SimpleBus\Message\Recorder\ContainsRecordedMessages;

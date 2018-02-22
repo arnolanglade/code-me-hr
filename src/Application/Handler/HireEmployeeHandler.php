@@ -13,8 +13,8 @@ declare(strict_types=1);
 namespace Al\Application\Handler;
 
 use Al\Application\Command\HireEmployee;
-use Al\Component\Employee\Employee;
-use Al\Component\Employee\EmployeeRepositoryInterface;
+use Al\Domain\Employee;
+use Al\Domain\EmployeeRepositoryInterface;
 use Ramsey\Uuid\Uuid;
 
 final class HireEmployeeHandler

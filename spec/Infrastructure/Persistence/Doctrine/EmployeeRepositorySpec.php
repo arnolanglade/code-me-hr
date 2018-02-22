@@ -2,9 +2,9 @@
 
 namespace spec\Al\Infrastructure\Persistence\Doctrine;
 
-use Al\Component\Employee\Employee;
-use Al\Component\Employee\EmployeeInterface;
-use Al\Component\Employee\EmployeeRepositoryInterface;
+use Al\Domain\Employee;
+use Al\Domain\EmployeeInterface;
+use Al\Domain\EmployeeRepositoryInterface;
 use Al\Infrastructure\Persistence\Doctrine\EmployeeRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\ClassMetadata;

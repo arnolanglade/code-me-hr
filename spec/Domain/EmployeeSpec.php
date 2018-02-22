@@ -1,14 +1,13 @@
 <?php
 
-namespace spec\Al\Component\Employee;
+namespace spec\Al\Domain;
 
-use Al\Component\Employee\Employee;
-use Al\Component\Employee\EmployeeInterface;
-use Al\Component\Employee\Event\EmployeeFired;
-use Al\Component\Employee\Event\EmployeeHired;
-use Al\Component\Employee\Event\EmployeePromoted;
+use Al\Domain\Employee;
+use Al\Domain\EmployeeInterface;
+use Al\Domain\Event\EmployeeFired;
+use Al\Domain\Event\EmployeeHired;
+use Al\Domain\Event\EmployeePromoted;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Ramsey\Uuid\Uuid;
 use SimpleBus\Message\Recorder\ContainsRecordedMessages;
 

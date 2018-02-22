@@ -13,7 +13,7 @@ declare(strict_types=1);
 namespace Al\Application\Handler;
 
 use Al\Application\Command\FireEmployee;
-use Al\Component\Employee\EmployeeRepositoryInterface;
+use Al\Domain\EmployeeRepositoryInterface;
 
 final class FireEmployeeHandler
 {

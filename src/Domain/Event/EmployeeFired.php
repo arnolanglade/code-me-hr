@@ -10,7 +10,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Al\Component\Employee\Event;
+namespace Al\Domain\Event;
 
 use SimpleBus\Message\Name\NamedMessage;
 

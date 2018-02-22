@@ -12,10 +12,10 @@ declare(strict_types=1);
 
 namespace Al\Infrastructure\Persistence\Doctrine;
 
-use Al\Component\Employee\Employee;
-use Al\Component\Employee\EmployeeInterface;
-use Al\Component\Employee\EmployeeRepositoryInterface;
-use Al\Component\Employee\Exception\NotExistingEmployee;
+use Al\Domain\Employee;
+use Al\Domain\EmployeeInterface;
+use Al\Domain\EmployeeRepositoryInterface;
+use Al\Domain\Exception\NotExistingEmployee;
 use Doctrine\ORM\EntityManagerInterface;
 use Ramsey\Uuid\UuidInterface;
 

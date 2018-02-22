@@ -4,8 +4,8 @@ namespace spec\Al\Application\Handler;
 
 use Al\Application\Command\PromoteEmployee;
 use Al\Application\Handler\PromoteEmployeeHandler;
-use Al\Component\Employee\EmployeeInterface;
-use Al\Component\Employee\EmployeeRepositoryInterface;
+use Al\Domain\EmployeeInterface;
+use Al\Domain\EmployeeRepositoryInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Ramsey\Uuid\Uuid;
