@@ -2,10 +2,10 @@
 
 namespace spec\Al\Domain\ReadModel;
 
-use Al\Domain\ReadModel\Employee;
+use Al\Domain\ReadModel\EmployeeList;
 use PhpSpec\ObjectBehavior;
 
-class EmployeeSpec extends ObjectBehavior
+class EmployeeListSpec extends ObjectBehavior
 {
     function let()
     {
@@ -14,7 +14,7 @@ class EmployeeSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType(Employee::class);
+        $this->shouldHaveType(EmployeeList::class);
     }
 
     function it_has_a_name()

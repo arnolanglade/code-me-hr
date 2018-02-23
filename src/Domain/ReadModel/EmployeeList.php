@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace Al\Domain\ReadModel;
 
-final class Employee
+final class EmployeeList
 {
     /** @var string */
     private $id;

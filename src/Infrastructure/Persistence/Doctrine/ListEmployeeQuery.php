@@ -12,8 +12,11 @@ declare(strict_types=1);
 
 namespace Al\Infrastructure\Persistence\Doctrine;
 
+use Al\Domain\Employee;
+use Al\Domain\ReadModel\EmployeeList;
 use Doctrine\ORM\EntityManagerInterface;
-use Happyr\DoctrineSpecification\Specification\Specification;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 
 final class ListEmployeeQuery
 {
@@ -31,30 +34,22 @@ final class ListEmployeeQuery
     /**
      * {@inheritdoc}
      */
-    public function findAll(Specification $searchCriteria, $page = 1, $limit = 10)
+    public function findAll(int $page = 1, int $limit = 10): Pagerfanta
     {
-//        $searchCriteria = new NewX(
-//            $searchCriteria,
-//            DTO::class
-//        );
-//
-//        $queryBuilder = $this->entityManager->createQueryBuilder()
-//            ->from(Employee::class, 'employee');
-//
-//        if ($searchCriteria instanceof QueryModifier) {
-//            $searchCriteria->modify($queryBuilder, 'employee');
-//        }
-//
-//        if ($searchCriteria instanceof Filter &&
-//            $filter = $searchCriteria->getFilter($queryBuilder, 'employee')) {
-//            $queryBuilder->andWhere($filter);
-//        }
-//
-//        // https://github.com/doctrine/doctrine2/issues/2596#issuecomment-162359732
-//        $employees = new Pagerfanta(new DoctrineORMAdapter($queryBuilder, false, false));
-//        $employees->setCurrentPage($page);
-//        $employees->setMaxPerPage($limit);
-//
-//        return $employees;
+        $queryBuilder = $this->entityManager->createQueryBuilder()
+            ->select(
+                sprintf(
+                    'NEW %s(employee.id, employee.name, employee.position, employee.salaryScale, employee.firedAt)',
+                    EmployeeList::class
+                )
+            )
+            ->from(Employee::class, 'e')
+            ->getQuery();
+
+        $employees = new Pagerfanta(new DoctrineORMAdapter($queryBuilder, false, false));
+        $employees->setCurrentPage($page);
+        $employees->setMaxPerPage($limit);
+
+        return $employees;
     }
 }
