@@ -1,24 +1,24 @@
 homepage:
     path: /
     defaults:
-        _controller: Al\Infrastructure\UserInterface\Web\EmployeeController::listAction
+        _controller: Al\ResourceManagement\Infrastructure\UserInterface\Web\EmployeeController::listAction
 
 employee_list:
     path: /employee
     defaults:
-        _controller: Al\Infrastructure\UserInterface\Web\EmployeeController::listAction
+        _controller: Al\ResourceManagement\Infrastructure\UserInterface\Web\EmployeeController::listAction
 
 employee_hire:
     path: /employee/hire
     defaults:
-        _controller: Al\Infrastructure\UserInterface\Web\EmployeeController::hireAction
+        _controller: Al\ResourceManagement\Infrastructure\UserInterface\Web\EmployeeController::hireAction
 
 employee_promote:
     path: /employee/{employeeId}/promote
     defaults:
-        _controller: Al\Infrastructure\UserInterface\Web\EmployeeController::promoteAction
+        _controller: Al\ResourceManagement\Infrastructure\UserInterface\Web\EmployeeController::promoteAction
 
 employee_fire:
     path: /employee/{employeeId}/fire
     defaults:
-        _controller: Al\Infrastructure\UserInterface\Web\EmployeeController::fireAction
+        _controller: Al\ResourceManagement\Infrastructure\UserInterface\Web\EmployeeController::fireAction

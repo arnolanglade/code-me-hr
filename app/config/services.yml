@@ -1,32 +1,32 @@
 services:
     ### Repository
     al.employee.repository:
-        class: 'Al\Infrastructure\Persistence\Doctrine\EmployeeRepository'
+        class: 'Al\ResourceManagement\Infrastructure\Persistence\Doctrine\EmployeeRepository'
         arguments:
             - '@doctrine.orm.entity_manager'
 
     al.employee.query:
-        class: 'Al\Infrastructure\Persistence\Doctrine\ListEmployeeQuery'
+        class: 'Al\ResourceManagement\Infrastructure\Persistence\Doctrine\ListEmployeeQuery'
         arguments:
             - '@doctrine.orm.entity_manager'
 
     ### Command handler
     al.employee.handler.hire:
-        class: 'Al\Application\Handler\HireEmployeeHandler'
+        class: 'Al\ResourceManagement\Application\Handler\HireEmployeeHandler'
         arguments:
             - '@al.employee.repository'
         tags:
             - { name: command_handler, handles: hire_employee }
 
     al.employee.handler.promote:
-        class: 'Al\Application\Handler\PromoteEmployeeHandler'
+        class: 'Al\ResourceManagement\Application\Handler\PromoteEmployeeHandler'
         arguments:
             - '@al.employee.repository'
         tags:
             - { name: command_handler, handles: promote_employee }
 
     al.employee.handler.fire:
-        class: 'Al\Application\Handler\FireEmployeeHandler'
+        class: 'Al\ResourceManagement\Application\Handler\FireEmployeeHandler'
         arguments:
             - '@al.employee.repository'
         tags:
@@ -34,7 +34,7 @@ services:
 
     ### Event subscriber
     al.employee.event_subscriber.flash_message:
-        class: 'Al\Infrastructure\Framework\FlashMessageSubscriber'
+        class: 'Al\ResourceManagement\Infrastructure\Framework\FlashMessageSubscriber'
         arguments:
             - '@session'
         tags:
@@ -44,4 +44,4 @@ services:
 
     ### Fixture loading
     hautelook_alice.locator.env_directory:
-        class: 'Al\Infrastructure\Persistence\Doctrine\Fixtures\FileLocator'
+        class: 'Al\ResourceManagement\Infrastructure\Persistence\Doctrine\Fixtures\FileLocator'
