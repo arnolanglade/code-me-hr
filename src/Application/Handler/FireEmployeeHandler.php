@@ -29,7 +29,9 @@ final class FireEmployeeHandler
     }
 
     /**
-     * @param \Al\Application\Command\FireEmployee $command
+     * @param FireEmployee $command
+     *
+     * @throws \Al\Domain\Exception\NotExistingEmployee
      */
     public function handle(FireEmployee $command)
     {

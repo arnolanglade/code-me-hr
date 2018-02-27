@@ -43,7 +43,7 @@ final class ListEmployeeQuery
                     EmployeeList::class
                 )
             )
-            ->from(Employee::class, 'e')
+            ->from(Employee::class, 'employee')
             ->getQuery();
 
         $employees = new Pagerfanta(new DoctrineORMAdapter($queryBuilder, false, false));

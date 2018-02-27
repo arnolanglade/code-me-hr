@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Al\Infrastructure\Persistence\Doctrine;
+namespace Al\Infrastructure\Persistence\Doctrine\Fixtures;
 
 use Hautelook\AliceBundle\FixtureLocatorInterface;
 use Symfony\Component\Finder\Finder as SymfonyFinder;
@@ -13,7 +13,7 @@ final class FileLocator implements FixtureLocatorInterface
      */
     public function locateFiles(array $bundles, string $environment): array
     {
-        $path = sprintf('%s/Resources/fixtures', __DIR__);
+        $path = sprintf('%s/../Resources/fixtures', __DIR__);
         $path = realpath($path);
         if (false === $path || false === file_exists($path)) {
             return [];

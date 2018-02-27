@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Al\Infrastructure\Persistence\Doctrine;
+namespace spec\Al\Infrastructure\Persistence\Doctrine\Fixtures;
 
-use Al\Infrastructure\Persistence\Doctrine\FileLocator;
+use Al\Infrastructure\Persistence\Doctrine\Fixtures\FileLocator;
 use Hautelook\AliceBundle\FixtureLocatorInterface;
 use PhpSpec\ObjectBehavior;
 
@@ -23,7 +23,7 @@ class FileLocatorSpec extends ObjectBehavior
      */
     function it_locates_the_fixtures_files()
     {
-        $path = __DIR__.'/../../../../src/Infrastructure/Persistence/Doctrine/Resources/fixtures/employee.yml';
+        $path = __DIR__.'/../../../../../src/Infrastructure/Persistence/Doctrine/Resources/fixtures/employee.yml';
 
         $this->locateFiles([], '')->shouldReturn([realpath($path)]);
     }

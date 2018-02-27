@@ -9,7 +9,13 @@ class EmployeeListSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith('03a368d5-85b2-46cf-a860-ab22101827d8', 'name', 'position', 10, '2012-12-12');
+        $this->beConstructedWith(
+            '03a368d5-85b2-46cf-a860-ab22101827d8',
+            'name',
+            'position',
+            10,
+            new \DateTimeImmutable('2012-12-12')
+        );
     }
 
     function it_is_initializable()

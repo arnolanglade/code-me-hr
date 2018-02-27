@@ -29,8 +29,13 @@ final class EmployeeList
     /** @var string */
     private $firedAt;
 
-    public function __construct(string $id, string $name, string $position, int $salaryScale, string $firedAt = null)
-    {
+    public function __construct(
+        string $id,
+        string $name,
+        string $position,
+        int $salaryScale,
+        \DateTimeInterface $firedAt = null
+    ) {
         $this->id = $id;
         $this->name = $name;
         $this->position = $position;
@@ -75,6 +80,6 @@ final class EmployeeList
      */
     public function getFiredAt(): string
     {
-        return $this->firedAt;
+        return $this->firedAt->format('Y-m-d');
     }
 }

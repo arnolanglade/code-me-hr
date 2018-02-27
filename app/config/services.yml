@@ -1,32 +1,32 @@
 services:
     ### Repository
     al.employee.repository:
-        class: 'Al\Infrastructure\Employee\Repository\EmployeeRepository'
+        class: 'Al\Infrastructure\Persistence\Doctrine\EmployeeRepository'
         arguments:
             - '@doctrine.orm.entity_manager'
 
-    al.employee.finder:
-        class: 'Al\Infrastructure\Employee\Finder\EmployeeFinder'
+    al.employee.query:
+        class: 'Al\Infrastructure\Persistence\Doctrine\ListEmployeeQuery'
         arguments:
             - '@doctrine.orm.entity_manager'
 
     ### Command handler
     al.employee.handler.hire:
-        class: 'Al\Application\Employee\Handler\HireEmployeeHandler'
+        class: 'Al\Application\Handler\HireEmployeeHandler'
         arguments:
             - '@al.employee.repository'
         tags:
             - { name: command_handler, handles: hire_employee }
 
     al.employee.handler.promote:
-        class: 'Al\Application\Employee\Handler\PromoteEmployeeHandler'
+        class: 'Al\Application\Handler\PromoteEmployeeHandler'
         arguments:
             - '@al.employee.repository'
         tags:
             - { name: command_handler, handles: promote_employee }
 
     al.employee.handler.fire:
-        class: 'Al\Application\Employee\Handler\FireEmployeeHandler'
+        class: 'Al\Application\Handler\FireEmployeeHandler'
         arguments:
             - '@al.employee.repository'
         tags:
@@ -34,7 +34,7 @@ services:
 
     ### Event subscriber
     al.employee.event_subscriber.flash_message:
-        class: 'Al\Application\Employee\EventListener\FlashMessageSubscriber'
+        class: 'Al\Infrastructure\Framework\FlashMessageSubscriber'
         arguments:
             - '@session'
         tags:
@@ -44,4 +44,4 @@ services:
 
     ### Fixture loading
     hautelook_alice.locator.env_directory:
-        class: 'Al\Infrastructure\Fixtures\FileLocator'
+        class: 'Al\Infrastructure\Persistence\Doctrine\Fixtures\FileLocator'

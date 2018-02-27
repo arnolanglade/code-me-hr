@@ -1,4 +1,4 @@
-Al\Component\Employee\Employee:
+Al\Domain\Employee:
     type: entity
     table: employee
     fields:

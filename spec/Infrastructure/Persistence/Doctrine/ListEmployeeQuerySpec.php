@@ -25,7 +25,6 @@ class ListEmployeeQuerySpec extends ObjectBehavior
 
     function it_finds_employees_that_match_specification(
         $entityManager,
-        Specification $specification,
         QueryBuilder $queryBuilder
     ) {
         $entityManager->createQueryBuilder()->willReturn($queryBuilder);
@@ -35,7 +34,7 @@ class ListEmployeeQuerySpec extends ObjectBehavior
             EmployeeList::class
         );
         $queryBuilder->select($select)->willReturn($queryBuilder);
-        $queryBuilder->from(Employee::class, 'e', null)->willReturn($queryBuilder);
+        $queryBuilder->from(Employee::class, 'employee', null)->willReturn($queryBuilder);
 
         $queryBuilder->getQuery()->shouldBeCalled();
 

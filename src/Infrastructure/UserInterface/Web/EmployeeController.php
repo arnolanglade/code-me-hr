@@ -20,20 +20,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class EmployeeController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     * @Route("/employee", name="employee_list")
-     */
     public function listAction(Request $request)
     {
-        $searchCriteria = new SearchCriteria(
-            (string) $request->get('name'),
-            (string) $request->get('position'),
-            (bool) $request->get('is_fired', false)
-        );
-
-        $employees = $this->get('al.employee.finder')->findAll(
-            $searchCriteria,
+        $employees = $this->get('al.employee.query')->findAll(
             (int) $request->get('page', 1),
             (int) $request->get('limit', 10)
         );
@@ -43,9 +32,6 @@ class EmployeeController extends Controller
         ]);
     }
 
-    /**
-     * @Route("/employee/hire", name="employee_hire")
-     */
     public function hireAction(Request $request)
     {
         $form = $this->createForm(EmployeeType::class, new HireEmployee());
@@ -69,9 +55,6 @@ class EmployeeController extends Controller
         ]);
     }
 
-    /**
-     * @Route("/employee/{employeeId}/promote", name="employee_promote")
-     */
     public function promoteAction($employeeId, Request $request)
     {
         $form = $this->createForm(EmployeeType::class, new PromoteEmployee($employeeId));
@@ -95,9 +78,6 @@ class EmployeeController extends Controller
         ]);
     }
 
-    /**
-     * @Route("/employee/{employeeId}/fire", name="employee_fire")
-     */
     public function fireAction($employeeId, Request $request)
     {
         $form = $this->createForm(EmployeeType::class, new FireEmployee($employeeId));
