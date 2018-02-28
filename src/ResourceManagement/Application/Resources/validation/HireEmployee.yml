@@ -1,0 +1,11 @@
+Al\ResourceManagement\Application\Employee\Command\HireEmployee:
+    properties:
+        name:
+            - NotBlank: ~
+        position:
+            - NotBlank: ~
+        salaryScale:
+            - NotBlank: ~
+            - Range:
+                min: 1
+                max: 15

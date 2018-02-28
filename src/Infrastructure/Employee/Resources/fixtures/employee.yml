@@ -1,9 +1,0 @@
-Al\Component\Employee\Employee:
-  employee_{1..50}:
-      __construct: { hire: ['<username()>', 'Developer', '<randomDigit()>'] }
-  employee_{51..61}:
-      __construct: { hire: ['<username()>', 'Product owner', '<randomDigit()>'] }
-  employee_{62..67}:
-      __construct: { hire: ['<username()>', 'Designer', '<randomDigit()>'] }
-  employee_{68..70}:
-      __construct: { hire: ['<username()>', 'UX Designer', '<randomDigit()>'] }
