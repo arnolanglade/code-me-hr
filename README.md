@@ -1,9 +1,9 @@
 Code me an HR ! 
 ===============
-[![Build Status](https://scrutinizer-ci.com/g/aRn0D/labs/badges/build.png?b=master)](https://scrutinizer-ci.com/g/aRn0D/labs/build-status/master)
-[![Build Status](https://travis-ci.org/aRn0D/labs.svg?branch=master)](https://travis-ci.org/aRn0D/labs)
+[![Build Status](https://scrutinizer-ci.com/g/arnolanglade/code-me-hr/badges/build.png?b=master)](https://scrutinizer-ci.com/g/arnolanglade/code-me-hr/build-status/master)
+[![Build Status](https://travis-ci.org/arnolanglade/code-me-hr.svg?branch=master)](https://travis-ci.org/arnolanglade/code-me-hr)
 
-This is the code used for the talk **Code me an HR** at the **PHPTour 2017**.
+This is the code used for the talk **Code me an HR** at **PHPTour 2017**.
 
 **Slide:** [here](https://www.slideshare.net)
 **Video:** [here but in french, sorry](https://www.youtube.com/watch?v=h0Upir7bg1o) 
