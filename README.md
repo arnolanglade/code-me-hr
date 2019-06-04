@@ -8,11 +8,6 @@ This is the code used for the talk **Code me an HR** at **PHPTour 2017**.
 **Slide:** [here](https://www.slideshare.net)
 **Video:** [here but in french, sorry](https://www.youtube.com/watch?v=h0Upir7bg1o) 
 
-This application is very simple example of a "DDD" project. Here, we have
-
-* a single bounded Context named **Resource Management**
-* s single aggregate named **Employee**
-
 Technical requirements
 ----------------------
 
